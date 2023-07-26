@@ -5,8 +5,10 @@
 
 image cr = "ChefRizz.png"
 image d = "Daria.png"
+define mc = Character("[name]")
 
 image bgroom = "bgkitchen.jpg"
+image bgplaceholder = "bgplaceholder.jpg"
 
 transform speaking:
     ease 0.2 zoom 1.03
@@ -44,20 +46,35 @@ define d = Character("Daria", image="Daria.png", callback=daria_callback)
 
 label start:
 
+    python:
+        name = renpy.input("What's your name?")
+        name = name.strip() or "Generic Waiter"
+
     scene bgroom
+    scene bgplaceholder
+
+    show bgplaceholder
+    show d at center with moveinright
+
+    mc "Wait.. who are you ?"
+
+    play music "deathnote.mp3"
+    d "{cps=50}{nw}{i}giggles{/i} I, um, couldn't resist introducing myself. I'm Daria-chan, your newest fan and self-proclaimed sidekick 
+    in this captivating urban adventure! {i}adjusts glasses dramatically{/i}\nYou see, I've got an insatiable hunger for all things anim-{nw}{/cps}"
+    d "{cps=30}{nw}Wait! don't leave me!{nw}{/cps}"
+
+    stop music fadeout 2.0
+
+    play music "kitchen.mp3" fadein 2.0
+
     show bgroom
+    hide d
+    with pushright
 
-    show cr at center
-    show d at left
+    show cr at center with moveinbottom
+    cr "She was weird wasn't she?"
 
-    "Wait.. who are you guys again?"
-
-    d "I'm Daria!"
-    cr "And I'm Chef Rizz!"
-    d "We're here to help you with your cooking!"
-    cr "We're going to teach you how to make a delicious meal!"
-
-    "You guys are weird..."
+    mc "Tell me about it..."
 
 
     return
