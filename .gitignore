@@ -176,8 +176,8 @@ pyrightconfig.json
 ### Renpy ###
 # Don't track content of these folders #
 ########################################
-cache/
-saves/
+game/cache/
+game/saves/
 
 
 # Compiled source #
