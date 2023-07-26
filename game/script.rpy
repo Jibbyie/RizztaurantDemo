@@ -5,6 +5,7 @@
 
 define CR = Character("Chef Rizz")
 image ChefRizz neutral = "ChefRizz.png"
+image Daria neutral = "Daria.png"
 image bgroom = "bgkitchen.jpg"
 
 # The game starts here.
@@ -13,6 +14,7 @@ label start:
 
     scene bgroom
     show bgroom
+    show Daria neutral at left
     show ChefRizz neutral
 
 
