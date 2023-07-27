@@ -4,6 +4,7 @@
 # name of the character.
 
 image cr = "ChefRizz.png"
+image crAwkward = "ChefRizzAwkward.png"
 image d = "Daria.png"
 default playerName = ""
 define mc = Character("[playerName]", color="#FF0000")
@@ -39,8 +40,17 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("cr", zorder=0, at_list=[not_speaking])
+        
+        elif renpy.showing("crAwkward"):
+        
+            if event == 'begin': 
+                renpy.show("crAwkward", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("crAwkward", zorder=0, at_list=[not_speaking])
 
 define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callback)
+define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", callback=daria_callback)
 
 
@@ -63,12 +73,13 @@ label start:
     with dissolve
     show d at center with moveinright
 
-    mc "Wait.. who are you ?"
+    mc "Wait.. who are you?"
 
     play music "deathnote.mp3"
     d "{cps=50}{nw}{i}giggles{/i} I, um, couldn't resist introducing myself. I'm Daria-chan, your newest fan and self-proclaimed sidekick 
     in this captivating urban adventure! {i}adjusts glasses dramatically{/i}\nYou see, I've got an insatiable hunger for all things anim-{nw}{/cps}"
     d "{cps=30}{nw}Wait! don't leave me!{nw}{/cps}"
+    play sound "running.mp3" volume 0.5
 
     stop music fadeout 2.0
 
@@ -79,9 +90,16 @@ label start:
     with pushright
 
     show cr at center with moveinbottom
-    cr "She was weird wasn't she?"
+    cr "{cps=20}She was weird wasn't she?{/cps}"
+    cr "{cps=20}A tiny bit hot though...{/cps}"
 
-    mc "Tell me about it..."
+    mc "What?"
+
+    hide cr
+    show crAwkward at center
+    crAwkward "{cps=20}Didn't mean to let that one slip out...{/cps}"
+
+    mc "You're a weirdo Chef."
 
 
     return
