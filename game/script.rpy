@@ -5,7 +5,8 @@
 
 image cr = "ChefRizz.png"
 image d = "Daria.png"
-define mc = Character("[name]")
+default playerName = ""
+define mc = Character("[playerName]", color="#FF0000")
 
 image bgroom = "bgkitchen.jpg"
 image bgplaceholder = "bgplaceholder.jpg"
@@ -42,18 +43,24 @@ init python:
 define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", callback=daria_callback)
 
+
 # The game starts here.
 
 label start:
-
-    python:
-        name = renpy.input("What's your name?")
-        name = name.strip() or "Generic Waiter"
+    label chooseName:
+        $playerName = renpy.input("What is your name? (You won't be able to change this later)", length=10)
+        $playerName = playerName.strip()
+        if playerName == "":
+            $playerName="Generic Waiter"
+        if playerName=="Daria".lower() or playerName=="Chef Rizz".lower():
+            "Please choose a different name, not one that is already an NPC!"
+            jump chooseName
 
     scene bgroom
     scene bgplaceholder
 
-    show bgplaceholder
+    show bgplaceholder 
+    with dissolve
     show d at center with moveinright
 
     mc "Wait.. who are you ?"
