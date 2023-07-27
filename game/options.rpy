@@ -1,4 +1,4 @@
-﻿## This file contains options that can be changed to customize your game.
+## This file contains options that can be changed to customize your game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -49,6 +49,10 @@ define build.name = "Rizztaurant_Demo"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
+
+define config.main_menu_music = "audio/rizz.mp3"
+
+## The default audio volumes
 
 
 ## To allow the user to play a test sound on the sound or voice channel,

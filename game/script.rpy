@@ -61,7 +61,7 @@ label start:
         $playerName = renpy.input("What is your name? (You won't be able to change this later)", length=10)
         $playerName = playerName.strip()
         if playerName == "":
-            $playerName="Generic Waiter"
+            $playerName="Joe Momma"
         if playerName=="Daria".lower() or playerName=="Chef Rizz".lower():
             "Please choose a different name, not one that is already an NPC!"
             jump chooseName
@@ -90,14 +90,14 @@ label start:
     with pushright
 
     show cr at center with moveinbottom
-    cr "{cps=20}She was weird wasn't she?{/cps}"
-    cr "{cps=20}A tiny bit hot though...{/cps}"
+    cr "{cps=25}She was weird wasn't she?{/cps}"
+    cr "{cps=25}A tiny bit hot though...{/cps}"
 
     mc "What?"
 
     hide cr
     show crAwkward at center
-    crAwkward "{cps=20}Didn't mean to let that one slip out...{/cps}"
+    crAwkward "{cps=25}Didn't mean to let that one slip out...{/cps}"
 
     mc "You're a weirdo Chef."
 
