@@ -32,6 +32,22 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("d", zorder=0, at_list=[not_speaking])
+        
+        elif renpy.showing("dHappy"):
+        
+            if event == 'begin': 
+                renpy.show("dHappy", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dHappy", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dAngry"):
+        
+            if event == 'begin': 
+                renpy.show("dAngry", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dAngry", zorder=0, at_list=[not_speaking])
 
     def chefRizz_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -65,6 +81,8 @@ define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callb
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", callback=daria_callback)
+define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
+define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
 
 
 # The game starts here.
@@ -97,37 +115,20 @@ label start:
     show crCooking at center with moveinbottom
     crCooking "I'm cooking Chef Rizz!"
     hide crCooking
-    
-    """ with dissolve
-    show d at center with moveinright
 
-    mc "Wait.. who are you?"
-
-    play music "deathnote.mp3"
-    d "{cps=50}{nw}{i}giggles{/i} I, um, couldn't resist introducing myself. I'm Daria-chan, your newest fan and self-proclaimed sidekick 
-    in this captivating urban adventure! {i}adjusts glasses dramatically{/i}\nYou see, I've got an insatiable hunger for all things anim-{nw}{/cps}"
-    d "{cps=30}{nw}Wait! don't leave me!{nw}{/cps}"
-    play sound "running.mp3" volume 0.5
-
-    stop music fadeout 2.0
-
-    play music "kitchen.mp3" fadein 2.0
-
-    show bgroom
+    show d at center with moveinbottom
+    d "I'm Daria!"
     hide d
-    with pushright
 
-    show cr at center with moveinbottom
-    cr "{cps=25}She was weird wasn't she?{/cps}"
-    cr "{cps=25}A tiny bit hot though...{/cps}"
+    show dHappy at center with moveinbottom
+    dHappy "I'm happy Daria!"
+    hide dHappy
 
-    mc "What?"
+    show dAngry at center with moveinbottom
+    dAngry "I'm angry Daria!"
+    hide dAngry
 
-    hide cr
-    show crAwkward at center
-    crAwkward "{cps=25}Didn't mean to let that one slip out...{/cps}"
 
-    mc "You're a weirdo Chef." """
 
 
     return
