@@ -5,7 +5,11 @@
 
 image cr = "ChefRizz.png"
 image crAwkward = "ChefRizzAwkward.png"
+image crCooking = "ChefRizzCooking.png"
 image d = "Daria.png"
+image dHappy = "DariaHappy.png"
+image dAngry = "DariaAngry.png"
+
 default playerName = ""
 define mc = Character("[playerName]", color="#FF0000")
 
@@ -65,6 +69,8 @@ label start:
         if playerName=="Daria".lower() or playerName=="Chef Rizz".lower():
             "Please choose a different name, not one that is already an NPC!"
             jump chooseName
+
+    stop music fadeout 2.0
 
     scene bgroom
     scene bgplaceholder
