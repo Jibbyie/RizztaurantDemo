@@ -13,6 +13,8 @@ image dAngry = "DariaAngry.png"
 default playerName = ""
 define mc = Character("[playerName]", color="#000000")
 
+define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
+
 define audio.background = "rizztaurantambience.mp3"
 
 image bgroom = "bgkitchen.jpg"
@@ -111,21 +113,24 @@ label start:
 
     "{cps=30}{i}Another quiet day at work. Feels like I'm serving ghosts more than customers.{/i}{/cps}"
     "{cps=30}{i}Serving imaginary friends might be easier than these empty seats. And less lonely.{/i}{/cps}"
-    "{cps=30}{i}I wonder if I should just close up shop and go home.{/i}{/cps}"
-    "{cps=30}{i}Seriously, it's like I'm the only one who cares about these tables. I'm not even sure why I'm still here. I guess I'm just waiting for something to happen.{/i}"
+    "{cps=30}{i}I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables. I'm not even sure why I'm still here. I guess I'm just waiting for something to happen.{/i}"
     "{cps=30}{i}I'm not sure what, though.{/i}{/cps}"
     mc "{cps=20}{i}[playerName], the expert in serving.. invisible guests. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.{/i}{/cps}"
 
     stop music fadeout 0.5
     play sound dooropening fadein 1.5
+    show bgkitchen with vpunch
     $renpy.pause(4.5)
+    play music heartbeat1 volume 0.75 fadein 1.0
     mc "{cps=15}{i}Wait... wh-what? What was that? Am I hearing things?!{/i}{/cps}"
 
     play sound walking
-    mc "{cps=30}{i}I think I hear footsteps...{/i}{/cps}"
+    mc "{cps=30}{i}I think I hear footsteps... Wait, do I? Is it just my imagination?{/i}{/cps}"
     play sound walking
-    mc "{cps=30}{i}A customer?! It can't be, it's been damn near.. I don't know 10 years since we've last had one? What should I do, oh god, I can't remember the la-{/i}{/cps}{nw}"
+    mc "{cps=30}{i}A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-{/i}{/cps}{nw}"
 
+    show bgkitchen with hpunch
+    stop music
     show d at center with easeinright
     play music dariabgm volume 0.75 fadein 1.0 
     "{cps=40}Helloooo?~ Is anyone here?{/cps}"
@@ -137,7 +142,10 @@ label start:
 
     "{cps=40}Oh, hello!{/cps}"
     "{cps=40}I'm sorry, I didn't mean to startle you {i}teehee{/i}. I was just looking for a place to eat, and I saw your sign outside.{/cps}"
-    d "{cps=40}I'm Daria, by the way. Nice to meet you! {i}heh!{/i}{/cps}"
+    d "{cps=40}I'm Daria by the way!{/cps}"
+    play sound sparkle
+    show bgkitchen with flashbulb
+    d "{cps=40}{i} Yoroshiku Onegaishimasu ♡!!~{/i}{/cps}"
     d "{cps=40}I'm not interrupting anything, am I?{/cps}"
 
     mc "{cps=30}Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up.{/cps}"
