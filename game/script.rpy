@@ -11,7 +11,9 @@ image dHappy = "DariaHappy.png"
 image dAngry = "DariaAngry.png"
 
 default playerName = ""
-define mc = Character("[playerName]", color="#FF0000")
+define mc = Character("[playerName]", color="#000000")
+
+define audio.background = "rizztaurantambience.mp3"
 
 image bgroom = "bgkitchen.jpg"
 image bgplaceholder = "bgplaceholder.jpg"
@@ -99,36 +101,54 @@ label start:
 
     stop music fadeout 2.0
 
+    play music rizztaurantambience loop
+
     scene bgroom
     scene bgplaceholder
 
-    show bgplaceholder 
+    show bgkitchen
+    with Dissolve(2.0)
 
-    show cr at center with moveinbottom
-    cr "I'm basic Chef Rizz!"
-    hide cr
+    "{cps=30}{i}Another quiet day at work. Feels like I'm serving ghosts more than customers.{/i}{/cps}"
+    "{cps=30}{i}Serving imaginary friends might be easier than these empty seats. And less lonely.{/i}{/cps}"
+    "{cps=30}{i}I wonder if I should just close up shop and go home.{/i}{/cps}"
+    "{cps=30}{i}Seriously, it's like I'm the only one who cares about these tables. I'm not even sure why I'm still here. I guess I'm just waiting for something to happen.{/i}"
+    "{cps=30}{i}I'm not sure what, though.{/i}{/cps}"
+    mc "{cps=20}{i}[playerName], the expert in serving.. invisible guests. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.{/i}{/cps}"
 
-    show crAwkward at center with moveinbottom
-    crAwkward "I'm awkward Chef Rizz!"
-    hide crAwkward
+    stop music fadeout 0.5
+    play sound dooropening fadein 1.5
+    $renpy.pause(4.5)
+    mc "{cps=15}{i}Wait... wh-what? What was that? Am I hearing things?!{/i}{/cps}"
 
-    show crCooking at center with moveinbottom
-    crCooking "I'm cooking Chef Rizz!"
-    hide crCooking
+    play sound walking
+    mc "{cps=30}{i}I think I hear footsteps...{/i}{/cps}"
+    play sound walking
+    mc "{cps=30}{i}A customer?! It can't be, it's been damn near.. I don't know 10 years since we've last had one? What should I do, oh god, I can't remember the la-{/i}{/cps}{nw}"
 
-    show d at center with moveinbottom
-    d "I'm Daria!"
-    hide d
+    show d at center with easeinright
+    play music dariabgm volume 0.75 fadein 1.0 
+    "{cps=40}Helloooo?~ Is anyone here?{/cps}"
 
-    show dHappy at center with moveinbottom
-    dHappy "I'm happy Daria!"
-    hide dHappy
+    mc "{cps=30}{i}Oh my god, it's a real person! I'm not crazy!{/i}{/cps}"
+    mc "{cps=30}{i}Stick to the script, stick to the script.. y-you know what to do man!{/i}{/cps}"
 
-    show dAngry at center with moveinbottom
-    dAngry "I'm angry Daria!"
-    hide dAngry
+    mc "{cps=30}Welcome to Rizztaurant, how may I help yo-{/cps}{nw}"
 
+    "{cps=40}Oh, hello!{/cps}"
+    "{cps=40}I'm sorry, I didn't mean to startle you {i}teehee{/i}. I was just looking for a place to eat, and I saw your sign outside.{/cps}"
+    d "{cps=40}I'm Daria, by the way. Nice to meet you! {i}heh!{/i}{/cps}"
+    d "{cps=40}I'm not interrupting anything, am I?{/cps}"
 
+    mc "{cps=30}Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up.{/cps}"
+    mc "{cps=30}{i}That was a bit weird..{/i}{/cps}"
+    play sound chairpullout
+    mc "{cps=30}I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?{/cps}"
+
+    play sound chairpullin
+    d "{cps=40}Sure thing! Don't mind if I do!{/cps}"
+
+    d "{cps=40}So, [playerName], what's good here?{/cps}"
 
 
     return
