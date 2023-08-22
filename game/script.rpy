@@ -53,8 +53,17 @@ init python:
             elif event == 'end': 
                 renpy.show("crAwkward", zorder=0, at_list=[not_speaking])
 
+        elif renpy.showing("crCooking"):
+        
+            if event == 'begin': 
+                renpy.show("crCooking", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("crCooking", zorder=0, at_list=[not_speaking])
+
 define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callback)
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
+define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", callback=daria_callback)
 
 
@@ -76,7 +85,20 @@ label start:
     scene bgplaceholder
 
     show bgplaceholder 
-    with dissolve
+
+    show cr at center with moveinbottom
+    cr "I'm basic Chef Rizz!"
+    hide cr
+
+    show crAwkward at center with moveinbottom
+    crAwkward "I'm awkward Chef Rizz!"
+    hide crAwkward
+
+    show crCooking at center with moveinbottom
+    crCooking "I'm cooking Chef Rizz!"
+    hide crCooking
+    
+    """ with dissolve
     show d at center with moveinright
 
     mc "Wait.. who are you?"
@@ -105,7 +127,7 @@ label start:
     show crAwkward at center
     crAwkward "{cps=25}Didn't mean to let that one slip out...{/cps}"
 
-    mc "You're a weirdo Chef."
+    mc "You're a weirdo Chef." """
 
 
     return
