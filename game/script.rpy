@@ -103,7 +103,7 @@ define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_ca
 
 label start:
     label chooseName:
-        $playerName = renpy.input("What is your name? (You won't be able to change this later)", length=10)
+        $playerName = renpy.input("What is your name?", length=10)
         $playerName = playerName.strip()
         if playerName == "":
             $playerName="Joe Momma"
@@ -124,14 +124,14 @@ label start:
     "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/i}{/cps}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/i}{/cps}"
     "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/i}"
-    mc "{cps=20}{i}([playerName], the expert in serving.. invisible guests. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}{/cps}"
+    mc "{cps=30}{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}{/cps}"
 
     stop music fadeout 0.5
     play sound dooropening fadein 0.1
     show bgkitchen with vpunch
     $renpy.pause(4.5)
     play music heartbeat1 volume 0.75 fadein 1.0
-    mc "{cps=15}{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}{/cps}"
+    mc "{cps=30}{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}{/cps}"
 
     play sound walking
     mc "{cps=30}{i}(I think I hear footsteps... Wait, do I? Is it just my imagination?){/i}{/cps}"
@@ -141,8 +141,8 @@ label start:
     show bgkitchen with hpunch
     stop music
     show d at center with easeinright
-    play music deathnote volume 0.2 fadein 1.0 
-    "{cps=40}Konnichiwa. Does this establishment currently harbor any occupants?{/cps}"
+    play music dariamainbgm volume 0.5 fadein 1.0 
+    "{cps=50}Konnichiwa. Does this establishment currently harbor any occupants?{/cps}"
 
     mc "{cps=30}{i}(Oh my god, it's a real person! I'm not crazy!){/i}{/cps}"
     mc "{cps=30}{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}{/cps}"
@@ -158,8 +158,6 @@ label start:
     play sound shing
     show bgkitchen with flashbulb
     d "{cps=50}{i} Yoroshiku Onegaishimasu!{/i}{/cps}"
-    stop music fadeout 0.5
-    play music dariamainbgm volume 0.5 fadein 1.0
     show d at center
     hide dSparkle
     d "{cps=50}Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?{/cps}"
@@ -222,8 +220,7 @@ label start:
     mc "{cps=30}{i}(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.'){/i}{/cps}"
     mc "{cps=30}{i}(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.){/i}{/cps}"
     mc "{cps=30}{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavors, a melody of imagination!){/i}{/cps}"
-    mc "{cps=30}{i}(I'll tell her that it's a once-in-a-lifetime opportunity, and that she'll be the envy of all her friends. I'll tell her that it's a chance to experience the true meaning of fine dining.){/i}{/cps}"
-    mc "{cps=30}{i}(And then, I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}{/cps}"
+    mc "{cps=30}{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}{/cps}"
     mc "{cps=30}{i}(Yep, I'm screwed.){/i}{/cps}"
 
     play sound walking
