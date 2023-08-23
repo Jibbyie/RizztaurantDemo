@@ -9,6 +9,7 @@ image crCooking = "ChefRizzCooking.png"
 image d = "Daria.png"
 image dHappy = "DariaHappy.png"
 image dAngry = "DariaAngry.png"
+image dSparkle = "DariaSparkle.png"
 
 default playerName = ""
 define mc = Character("[playerName]", color="#000000")
@@ -52,6 +53,13 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("dAngry", zorder=0, at_list=[not_speaking])
+        elif renpy.showing("dSparkle"):
+        
+            if event == 'begin': 
+                renpy.show("dSparkle", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dSparkle", zorder=0, at_list=[not_speaking])
 
     def chefRizz_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -87,6 +95,7 @@ define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=
 define d = Character("Daria", image="Daria.png", callback=daria_callback)
 define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
 define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
+define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_callback)
 
 
 # The game starts here.
@@ -111,52 +120,58 @@ label start:
     show bgkitchen
     with Dissolve(2.0)
 
-    "{cps=30}{i}Another quiet day at work. Feels like I'm serving ghosts more than customers.{/i}{/cps}"
-    "{cps=30}{i}Serving imaginary friends might be easier than these empty seats. And less lonely.{/i}{/cps}"
-    "{cps=30}{i}I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables. I'm not even sure why I'm still here. I guess I'm just waiting for something to happen.{/i}"
-    "{cps=30}{i}I'm not sure what, though.{/i}{/cps}"
-    mc "{cps=20}{i}[playerName], the expert in serving.. invisible guests. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.{/i}{/cps}"
+    "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/i}{/cps}"
+    "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/i}{/cps}"
+    "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/i}"
+    mc "{cps=20}{i}([playerName], the expert in serving.. invisible guests. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}{/cps}"
 
     stop music fadeout 0.5
-    play sound dooropening fadein 1.5
+    play sound dooropening fadein 0.1
     show bgkitchen with vpunch
     $renpy.pause(4.5)
     play music heartbeat1 volume 0.75 fadein 1.0
-    mc "{cps=15}{i}Wait... wh-what? What was that? Am I hearing things?!{/i}{/cps}"
+    mc "{cps=15}{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}{/cps}"
 
     play sound walking
-    mc "{cps=30}{i}I think I hear footsteps... Wait, do I? Is it just my imagination?{/i}{/cps}"
+    mc "{cps=30}{i}(I think I hear footsteps... Wait, do I? Is it just my imagination?){/i}{/cps}"
     play sound walking
-    mc "{cps=30}{i}A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-{/i}{/cps}{nw}"
+    mc "{cps=30}{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-){/i}{/cps}{nw}"
 
     show bgkitchen with hpunch
     stop music
     show d at center with easeinright
-    play music dariabgm volume 0.75 fadein 1.0 
-    "{cps=40}Helloooo?~ Is anyone here?{/cps}"
+    play music deathnote volume 0.2 fadein 1.0 
+    "{cps=40}Konnichiwa. Does this establishment currently harbor any occupants?{/cps}"
 
-    mc "{cps=30}{i}Oh my god, it's a real person! I'm not crazy!{/i}{/cps}"
-    mc "{cps=30}{i}Stick to the script, stick to the script.. y-you know what to do man!{/i}{/cps}"
+    mc "{cps=30}{i}(Oh my god, it's a real person! I'm not crazy!){/i}{/cps}"
+    mc "{cps=30}{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}{/cps}"
 
     mc "{cps=30}Welcome to Rizztaurant, how may I help yo-{/cps}{nw}"
 
-    "{cps=40}Oh, hello!{/cps}"
-    "{cps=40}I'm sorry, I didn't mean to startle you {i}teehee{/i}. I was just looking for a place to eat, and I saw your sign outside.{/cps}"
-    d "{cps=40}I'm Daria by the way!{/cps}"
-    play sound sparkle
+    "{cps=50}Salutations, diligent restaurant employee.{/cps}"
+    "{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}"
+    "{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}"
+    d "{cps=50}You may address my humble self as Daria.{/cps}"
+    hide d
+    show dSparkle at center
+    play sound shing
     show bgkitchen with flashbulb
-    d "{cps=40}{i} Yoroshiku Onegaishimasu ♡!!~{/i}{/cps}"
-    d "{cps=40}I'm not interrupting anything, am I?{/cps}"
+    d "{cps=50}{i} Yoroshiku Onegaishimasu!{/i}{/cps}"
+    stop music fadeout 0.5
+    play music dariamainbgm volume 0.5 fadein 1.0
+    show d at center
+    hide dSparkle
+    d "{cps=50}Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?{/cps}"
 
     mc "{cps=30}Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up.{/cps}"
-    mc "{cps=30}{i}That was a bit weird..{/i}{/cps}"
+    mc "{cps=30}{i}(That was a bit weird..){/i}{/cps}"
     play sound chairpullout
     mc "{cps=30}I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?{/cps}"
 
     play sound chairpullin
-    d "{cps=40}Sure thing! Don't mind if I do!{/cps}"
+    d "{cps=50}Indubitably! I shall engage in partaking without reservation!{/cps}"
 
-    d "{cps=40}So, [playerName], what's good here?{/cps}"
+    d "{cps=50}Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?{/cps}"
 
 
     return
