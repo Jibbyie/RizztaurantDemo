@@ -10,6 +10,7 @@ image d = "Daria.png"
 image dHappy = "DariaHappy.png"
 image dAngry = "DariaAngry.png"
 image dSparkle = "DariaSparkle.png"
+image rizztaurantmenu = "menu.png"
 
 default playerName = ""
 define mc = Character("[playerName]", color="#000000")
@@ -169,9 +170,71 @@ label start:
     mc "{cps=30}I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?{/cps}"
 
     play sound chairpullin
-    d "{cps=50}Indubitably! I shall engage in partaking without reservation!{/cps}"
+    d "{cps=50}Indubitably. I shall engage in partaking without reservation.{/cps}"
 
     d "{cps=50}Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?{/cps}"
 
+    mc "{cps=30}Oh, uh, sure!{/cps}"
+    mc "{cps=30}Let me just go get a menu for you really quick!{/cps}"
+
+    stop music fadeout 1.0
+    play music rizztaurantambience volume 0.2 fadein 2.0
+
+    play sound walking
+    hide d with Dissolve(2.0)
+
+    mc "{cps=30}{i}(I can't believe it! A real customer!){/i}{/cps}"
+    mc "{cps=30}{i}(Alright, stay calm, stay calm. It's just a menu.){/i}{/cps}"
+    mc "{cps=30}{i}(All I've got to do is bring it back. Like nothing's unusual.){/i}{/cps}"
+    mc "{cps=30}{i}(Just gotta walk back there and then they'll decide what they want, and I'll go tell the chef, and everything will be normal!){/i}{/cps}"
+
+    show rizztaurantmenu at truecenter 
+    play sound paperflip
+    mc "{cps=30}{i}Ta-da!{/i}{/cps}"
+
+    mc "{cps=30}{i}(Oh who am I kidding, she's not going to want to eat any of this garbage..){/i}{/cps}"
+    play sound paperdown
+    hide rizztaurantmenu
+    mc "{cps=30}{i}(Think man think, we can't let this opportunity go to waste.){/i}{/cps}"
+    mc "{cps=50}{i}....{/i}{/cps}"
+    mc "{cps=50}{i}.......{/i}{/cps}"
+    mc "{cps=50}{i}..................{/i}{/cps}"
+    mc "{cps=50}{i}.................................................{/i}{/cps}"
+    mc "{cps=50}{i}..........................................................................................................................................{/i}{/cps}"
+
+    play sound brightidea
+    $ renpy.pause(1.5)
+    mc "{cps=30}{i}(I've got it!){/i}{/cps}"
+    mc "{cps=30}{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}{/cps}"
+    mc "{cps=30}{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}{/cps}"
+    window hide
+    show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(0.5)
+    $ renpy.pause(1.5)
+    hide text
+    mc "{cps=30}{i}(Hmm, what if...){/i}{/cps}" with Dissolve(0.5)
+    mc "{cps=30}{i}(Ah, I've got an idea!){/i}{/cps}"
+    mc "{cps=30}{i}(Why not offer something unique? Something that'll grab her attention. Like...){/i}{/cps}"
+
+    mc "{cps=30}{i}(I'll ask her if she's up for a culinary adventure. You know, something different from the usual fare.){/i}{/cps}"
+    mc "{cps=30}{i}(A chance to savor the unexpected. After all, who wants predictable when you can have... surprise?){/i}{/cps}"
+    mc "{cps=30}{i}(Yeah, that sounds good!){/i}{/cps}"
+
+    mc "{cps=30}{i}(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.'){/i}{/cps}"
+    mc "{cps=30}{i}(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.){/i}{/cps}"
+    mc "{cps=30}{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavors, a melody of imagination!){/i}{/cps}"
+    mc "{cps=30}{i}(I'll tell her that it's a once-in-a-lifetime opportunity, and that she'll be the envy of all her friends. I'll tell her that it's a chance to experience the true meaning of fine dining.){/i}{/cps}"
+    mc "{cps=30}{i}(And then, I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}{/cps}"
+    mc "{cps=30}{i}(Yep, I'm screwed.){/i}{/cps}"
+
+    play sound walking
+    stop music fadeout 1.0
+    show dAngry at center with Dissolve(2.0)
+
+    play sound stomachgrowl
+    $ renpy.pause(4.0)
+    play music dariamainbgm volume 0.5 fadein 1.5
+    mc "{cps=10}Oh, uh, miss are you alrigh-{/cps}{nw}"
+    d "{cps=50}I apologize for my impatience, but I am in dire need of sustenance.{/cps}"
 
     return
+ 
