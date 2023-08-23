@@ -112,7 +112,7 @@ label start:
 
     stop music fadeout 2.0
 
-    play music rizztaurantambience loop
+    play music rizztaurantambience volume 0.2
 
     scene bgroom
     scene bgplaceholder
