@@ -127,7 +127,8 @@ label start:
     mc "{cps=30}{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}{/cps}"
 
     stop music fadeout 0.5
-    play sound dooropening fadein 0.1
+    play music dooropening volume 0.2 fadein 0.1
+    play sound shopbelldoor fadein 0.1
     show bgkitchen with vpunch
     $renpy.pause(4.5)
     play music heartbeat1 volume 0.75 fadein 1.0
@@ -206,10 +207,10 @@ label start:
     mc "{cps=30}{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}{/cps}"
     mc "{cps=30}{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}{/cps}"
     window hide
-    show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(0.5)
-    $ renpy.pause(1.5)
+    show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
+    $ renpy.pause(3)
     hide text
-    mc "{cps=30}{i}(Hmm, what if...){/i}{/cps}" with Dissolve(0.5)
+    mc "{cps=30}{i}(Hmm, what if...){/i}{/cps}" with Dissolve(1)
     mc "{cps=30}{i}(Ah, I've got an idea!){/i}{/cps}"
     mc "{cps=30}{i}(Why not offer something unique? Something that'll grab her attention. Like...){/i}{/cps}"
 
@@ -232,6 +233,46 @@ label start:
     play music dariamainbgm volume 0.5 fadein 1.5
     mc "{cps=10}Oh, uh, miss are you alrigh-{/cps}{nw}"
     d "{cps=50}I apologize for my impatience, but I am in dire need of sustenance.{/cps}"
+
+    mc "{cps=30}My sincere apologies for the wait!{/cps}"
+    mc "{cps=30}We actually have a rather special offering today.{/cps}"
+    hide dAngry
+    play sound shing
+    show dSparkle at center
+    d "{cps=50}Oh?{/cps}"
+    hide dSparkle
+    show d at center
+    d "{cps=50}Pray, do tell.{/cps}"
+    d "{cps=50}I am most intrigued.{/cps}"
+
+    mc "{cps=30}It's a chance to have a meal tailored precisely to your tastes.{/cps}"
+    mc "{cps=30}Our Michelin-starred chef will personally craft your culinary desires into reality.{/cps}"
+    mc "{cps=30}It's a symphony of flavors, a melody of imagination!{/cps}"
+    mc "{cps=30}Miss, it's only available for a limited time, you should act now before it's too late!{/cps}"
+    mc "{cps=30}{i}(I am so totally screwed){/i}{/cps}"
+
+    d "{cps=50}Oh-ho-ho-ho-ho-ho.{/cps}" # Introduce laughing animation in future
+    d "{cps=50}You have quite the way with words fine gentleman. I am most impressed.{/cps}"
+    d "{cps=50}To think of a culinary adventure tailored to my own preferences, it's positively thrilling!{/cps}"
+    d "{cps=50}The prospect of this Michelin-starred chef weaving a symphony of flavors for my palate fills me with delight.{/cps}"
+    d "{cps=50}And only for a limited time? How could I possibly resist?{/cps}"
+    d "{cps=50}I wholeheartedly embrace this opportunity!{/cps}"
+
+    mc "{cps=30}{i}(Wait, what?){/i}{/cps}"
+    mc "{cps=30}{i}(She actually wants to try it?){/i}{/cps}"
+    mc "{cps=30}{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}{/cps}"
+    mc "{cps=30}{i}(Snap out of it.){/i}{/cps}"
+    mc "{cps=30}I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations.{/cps}"
+    mc "{cps=30}But don't worry, it's bound to be an unforgettable experience in its own right.{/cps}"
+
+    d "{cps=50}Oh, how marvelous it sounds! An opportunity to tantalize my taste buds and embrace the unexpected.{/cps}"
+    d "{cps=50}The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected.{/cps}"
+    d "{cps=50}Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit.{/cps}"
+
+    mc "{cps=30}Uh, sure!{/cps}"
+    mc "{cps=30}{i}(Wow, she's really into this huh...){/i}{/cps}"
+    mc "{cps=30}Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself.{/cps}"
+    mc "{cps=30}{i}(I hope you know what you're getting into, Daria...){/i}{/cps}"
 
     return
  
