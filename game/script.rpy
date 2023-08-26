@@ -121,11 +121,13 @@ label start:
     show bgkitchen
     with Dissolve(2.0)
 
+    # Introducing MC's distaste for his job
     "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/i}{/cps}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/i}{/cps}"
     "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/i}"
     mc "{cps=30}{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}{/cps}"
 
+    # New customer comes into the scene
     stop music fadeout 0.5
     play music dooropening volume 0.2 fadein 0.1
     play sound shopbelldoor fadein 0.1
@@ -139,6 +141,7 @@ label start:
     play sound walking
     mc "{cps=30}{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-){/i}{/cps}{nw}"
 
+    # Daria introduction
     show bgkitchen with hpunch
     stop music
     show d at center with easeinright
@@ -172,7 +175,8 @@ label start:
     d "{cps=50}Indubitably. I shall engage in partaking without reservation.{/cps}"
 
     d "{cps=50}Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?{/cps}"
-
+    
+    # MC goes to get Daria a menu
     mc "{cps=30}Oh, uh, sure!{/cps}"
     mc "{cps=30}Let me just go get a menu for you really quick!{/cps}"
 
@@ -206,6 +210,8 @@ label start:
     mc "{cps=30}{i}(I've got it!){/i}{/cps}"
     mc "{cps=30}{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}{/cps}"
     mc "{cps=30}{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}{/cps}"
+
+    # Intermission, MC introduces main idea (core gameplay loop)
     window hide
     show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
     $ renpy.pause(3)
@@ -223,7 +229,8 @@ label start:
     mc "{cps=30}{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavors, a melody of imagination!){/i}{/cps}"
     mc "{cps=30}{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}{/cps}"
     mc "{cps=30}{i}(Yep, I'm screwed.){/i}{/cps}"
-
+    
+    # MC returns to Daria to introduce main idea
     play sound walking
     stop music fadeout 1.0
     show dAngry at center with Dissolve(2.0)
@@ -237,7 +244,6 @@ label start:
     mc "{cps=30}My sincere apologies for the wait!{/cps}"
     mc "{cps=30}We actually have a rather special offering today.{/cps}"
     hide dAngry
-    play sound shing
     show dSparkle at center
     d "{cps=50}Oh?{/cps}"
     hide dSparkle
@@ -251,6 +257,7 @@ label start:
     mc "{cps=30}Miss, it's only available for a limited time, you should act now before it's too late!{/cps}"
     mc "{cps=30}{i}(I am so totally screwed){/i}{/cps}"
 
+    # Daria accepts the notion of the idea
     d "{cps=50}Oh-ho-ho-ho-ho-ho.{/cps}" # Introduce laughing animation in future
     d "{cps=50}You have quite the way with words fine gentleman. I am most impressed.{/cps}"
     d "{cps=50}To think of a culinary adventure tailored to my own preferences, it's positively thrilling!{/cps}"
@@ -269,6 +276,7 @@ label start:
     d "{cps=50}The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected.{/cps}"
     d "{cps=50}Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit.{/cps}"
 
+    # MC brings up mention of Chef Rizz
     mc "{cps=30}Uh, sure!{/cps}"
     mc "{cps=30}{i}(Wow, she's really into this huh...){/i}{/cps}"
     mc "{cps=30}Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself.{/cps}"
