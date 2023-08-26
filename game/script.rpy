@@ -174,16 +174,23 @@ label start:
 
     menu respond_in_japanese:
         "Respond in Japanese":
+            $ initialResponse = "Japanese"
             mc "{cps=30}{font=japanese.otf}いらっしゃいませ！{/font}{/cps}"
             jump response_in_japanese
         "Respond in English":
+            $ initialResponse = "English"
             mc "{cps=30}Welcome to Rizztaurant, how may I help yo-{/cps}{nw}"
             jump main_core_loop
 
     label response_in_japanese:
-        "{cps=50}Wh-what?{/cps}"
+        stop music
+        "{cps=50}P-p-pardon me?{/cps}"
         mc "{cps=30}I'm sorry, you speak Japanese don't you?{/cps}"
         "{cps=50}I uh, uh-{/cps}"
+        "{cps=50}Yes, mochiron, you just, caught me off guard... sumimasen..{/cps}"
+        "{cps=50}I'm sorry, I'm just... simply, uh.. not used to being greeted in the language of the homeland. That is all. Yes of course.{/cps}"
+        "{cps=50}Ahem.{/cps}"
+        play music dariamainbgm volume 0.5
 
     label main_core_loop:
         "{cps=50}Salutations, diligent restaurant employee.{/cps}"
@@ -194,7 +201,10 @@ label start:
     show dGlare at center
     play sound shing
     show bgkitchen with flashbulb
-    d "{cps=50}{i} Yoroshiku Onegaishimasu!{/i}{/cps}"
+    if initialResponse == "English":
+        d "{cps=50}{i} Yoroshiku Onegaishimasu!{/i}{/cps}"
+    if initialResponse == "Japanese":
+        d "{cps=50}{i} Nice to meet you!{/i}{/cps}"
     hide dGlare
     show d at center
     d "{cps=50}Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?{/cps}"
@@ -282,76 +292,98 @@ label start:
     mc "{cps=30}My sincere apologies for the wait!{/cps}"
     menu:
         "Show her the menu":
-            mc "{cps=30}Here's our.. menu..., please take a look and let me know if you have any questions.{/cps}"
-            jump showing_menu
+            $ ideaOrMenu = "menuShown"
+            mc "{cps=30}Here's our.. menu. Please take a look and let me know if you have any questions.{/cps}"
+            jump backtodSparkle
         "Present your fabulous idea":
+            $ ideaOrMenu = "ideaPresented"
             mc "{cps=30}We actually have a rather special offering today.{/cps}"
+            jump backtodSparkle
+
+    label backtodSparkle:
+        hide dThinking
+        hide doombackground
+        show bgkitchen
+        show dSparkle at center
+        play music dariamainbgm volume 0.5
+        if ideaOrMenu == "menuShown":
+            jump showing_menu
+        if ideaOrMenu == "ideaPresented":
             jump presenting_idea
 
     label showing_menu:
-        hide dThinking
-        hide doombackground
-        show bgkitchen
-        show dSparkle at center
-        play music dariamainbgm volume 0.5
         d "{cps=50}Oh?{/cps}"
         hide dSparkle
         show d at center
-        d "{cps=50}Give it here!{/cps}"
-        d "{cps=50}I am most intrigued.{/cps}"
-        jump after_menu_choice
+        d "{cps=50}Allow me to take a gander.{/cps}"
+        play sound paperflip
+        d "{cps=50}Hm.{/cps}"
+        stop music
+        d "{cps=50}I see.{/cps}"
+        play music dariamainbgm volume 0.5
+        d "{cps=50}You know, these choices are... quite unusual. Is this some sort of avant-garde selection?{/cps}"
+        d "{cps=50}I must say, I wasn't expecting such.. creativity in the realm of taste combinations.{/cps}"
+        d "{cps=50}But alas, I regret to inform you these.. {i}meals,{/i} presented here are not to my liking.{/cps}"
+        d "{cps=50}I am most apologetic.{/cps}"
+        d "{cps=50}I shall take my leav-.{/cps}{nw}"
+        mc "{cps=30}Wait!{/cps}"
+        d "{cps=50}Pardon me?{/cps}"
+        mc "{cps=30}I mean, uh, I'm sorry to hear that.{/cps}"
+        mc "{cps=30}But, uh, we have a rather special offering today.{/cps}"
+        jump presenting_idea
 
     label presenting_idea:
-        hide dThinking
-        hide doombackground
-        show bgkitchen
-        show dSparkle at center
-        play music dariamainbgm volume 0.5
-        d "{cps=50}Oh?{/cps}"
         hide dSparkle
         show d at center
-        d "{cps=50}Pray, do tell.{/cps}"
+        d "{cps=50}{i}Hmmmmm..?{/i}{/cps}"
+        hide d
+        show dGlare at center
+        play sound shing
+        show bgkitchen with flashbulb
+        d "{cps=50}Sugoi! Do tell.{/cps}"
         d "{cps=50}I am most intrigued.{/cps}"
 
-    label after_menu_choice:
-        mc "{cps=30}It's a chance to have a meal tailored precisely to your tastes.{/cps}"
-        mc "{cps=30}Our Michelin-starred chef will personally craft your culinary desires into reality.{/cps}"
-        mc "{cps=30}It's a symphony of flavors, a melody of imagination!{/cps}"
-        mc "{cps=30}Miss, it's only available for a limited time, you should act now before it's too late!{/cps}"
-        mc "{cps=30}{i}(I am so totally screwed){/i}{/cps}"
+    hide dGlare
+    show d at center
+    mc "{cps=30}{i}(She really needs to stop doing that..){/i}{/cps}"
+    mc "{cps=30}It's a chance to have a meal tailored precisely to your tastes.{/cps}"
+    mc "{cps=30}Our Michelin-starred chef will personally craft your culinary desires into reality.{/cps}"
+    mc "{cps=30}It's a symphony of flavors, a melody of imagination!{/cps}"
+    mc "{cps=30}Miss, it's only available for a limited time, you should act now before it's too late!{/cps}"
+    mc "{cps=30}{i}(I am so totally screwed){/i}{/cps}"
 
-        # Daria accepts the notion of the idea
-        hide d
-        show dGlassesShine at center
-        d "{cps=50}Oh-ho-ho-ho-ho-ho.{/cps}" # Introduce laughing animation in future
-        hide dGlassesShine
-        show d at center
-        d "{cps=50}You have quite the way with words fine gentleman. I am most impressed.{/cps}"
-        d "{cps=50}To think of a culinary adventure tailored to my own preferences, it's positively thrilling!{/cps}"
-        d "{cps=50}The prospect of this Michelin-starred chef weaving a symphony of flavors for my palate fills me with delight.{/cps}"
-        d "{cps=50}And only for a limited time? How could I possibly resist?{/cps}"
-        d "{cps=50}I wholeheartedly embrace this opportunity!{/cps}"
+    # Daria accepts the notion of the idea
+    hide d
+    show dGlassesShine at center
+    d "{cps=50}Oh-ho-ho-ho-ho-ho.{/cps}" # Introduce laughing animation in future
+    hide dGlassesShine
+    show d at center
+    d "{cps=50}You have quite the way with words fine gentleman. I am most impressed.{/cps}"
+    d "{cps=50}To think of a culinary adventure tailored to my own preferences, it's positively thrilling!{/cps}"
+    d "{cps=50}The prospect of this Michelin-starred chef weaving a symphony of flavors for my palate fills me with delight.{/cps}"
+    d "{cps=50}And only for a limited time? How could I possibly resist?{/cps}"
+    d "{cps=50}I wholeheartedly embrace this opportunity!{/cps}"
 
-        mc "{cps=30}{i}(Wait, what?){/i}{/cps}"
-        mc "{cps=30}{i}(She actually wants to try it?){/i}{/cps}"
-        mc "{cps=30}{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}{/cps}"
-        mc "{cps=30}{i}(Snap out of it.){/i}{/cps}"
-        mc "{cps=30}I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations.{/cps}"
-        mc "{cps=30}But don't worry, it's bound to be an unforgettable experience in its own right.{/cps}"
+    mc "{cps=30}{i}(Wait, what?){/i}{/cps}"
+    mc "{cps=30}{i}(She actually wants to try it?){/i}{/cps}"
+    mc "{cps=30}{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}{/cps}"
+    mc "{cps=30}{i}(Snap out of it.){/i}{/cps}"
+    mc "{cps=30}I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations.{/cps}"
+    mc "{cps=30}But don't worry, it's bound to be an unforgettable experience in its own right.{/cps}"
 
-        d "{cps=50}Oh, how marvelous it sounds! An opportunity to tantalize my taste buds and embrace the unexpected.{/cps}"
-        d "{cps=50}The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected.{/cps}"
-        d "{cps=50}Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit.{/cps}"
+    d "{cps=50}Oh, how marvelous it sounds! An opportunity to tantalize my taste buds and embrace the unexpected.{/cps}"
+    d "{cps=50}The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected.{/cps}"
+    d "{cps=50}Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit.{/cps}"
 
-        # MC brings up mention of Chef Rizz
-        mc "{cps=30}Uh, sure!{/cps}"
-        mc "{cps=30}{i}(Wow, she's really into this huh...){/i}{/cps}"
-        mc "{cps=30}Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself.{/cps}"
-        mc "{cps=30}{i}(I hope you know what you're getting into, Daria...){/i}{/cps}"
+    # MC brings up mention of Chef Rizz
+    mc "{cps=30}Uh, sure!{/cps}"
+    mc "{cps=30}{i}(Wow, she's really into this huh...){/i}{/cps}"
+    mc "{cps=30}Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself.{/cps}"
+    mc "{cps=30}{i}(I hope you know what you're getting into, Daria...){/i}{/cps}"
 
-        d "{cps=50}Oh but of course, I live for the suspense.{/cps}"
-        d "{cps=50}I shall await the chef's creation with bated breath.{/cps}"
-        d "{cps=50}Apprise, how do we commence such an immense undertaking?{/cps}"
+    d "{cps=50}Oh but of course, I live for the suspense.{/cps}"
+    d "{cps=50}I shall await the chef's creation with bated breath.{/cps}"
+    d "{cps=50}Apprise, how do we commence such an immense undertaking?{/cps}"
 
     return
  
