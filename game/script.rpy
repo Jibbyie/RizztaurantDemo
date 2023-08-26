@@ -174,7 +174,7 @@ label start:
 
     menu respond_in_japanese:
         "Respond in Japanese":
-            mc "{cps=30}Hai, irasshaimase!{/cps}"
+            mc "{cps=30}{font=japanese.otf}いらっしゃいませ！{/font}{/cps}"
             jump response_in_japanese
         "Respond in English":
             mc "{cps=30}Welcome to Rizztaurant, how may I help yo-{/cps}{nw}"
