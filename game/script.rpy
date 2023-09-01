@@ -340,7 +340,7 @@ label start:
         show dGlare at center
         play sound shing
         show bgkitchen with flashbulb
-        d "Sugoi! Do tell."
+        d "{b}Sugoi!{/b} Do tell."
         d "I am most intrigued."
 
     hide dGlare
@@ -383,7 +383,26 @@ label start:
     d "Oh but of course, I live for the suspense."
     d "I shall await the chef's creation with bated breath."
     d "Apprise, how do we commence such an immense undertaking?"
-    d "I'm testing some text speed right now though!"
+    
+    mc "Um, well, let me know when you're ready and I'll explain the process."
+    d "I am prepared to begin at your behest."
+    mc "O-okay.. {i}(what the heck does behest mean?){/i}"
+    mc "So, uh, first, you'll need to tell me what you would like to eat."
+    mc "Then I'll relay it to the chef."
+    mc "You can be as specific or as vague as you want."
+    mc "The chef will do his best to create something that closely matches your requests."
+    mc "The sky's the limit, as long as what you propose is within reason {i}(and our budget hopefully..){/i}."
+    d "I see, I see."
+    d "I shall endeavor to be as specific as possible."
+    d "How delightful! I am most eager to begin."
+
+    mc "Alright, let's get started then!"
+    mc "So, what would you like to eat?"
+    play sound paperflip
+    # placeholderm replace with notebook drawing in future
+    show notebook at topright 
+
+    d "Hmmmm...."
 
     return
  
