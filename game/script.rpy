@@ -399,10 +399,14 @@ label start:
     mc "Alright, let's get started then!"
     mc "So, what would you like to eat?"
     play sound paperflip
-    # placeholderm replace with notebook drawing in future
+    # placeholder replace with notebook drawing in future
     show notebook at topright 
 
     d "Hmmmm...."
+    d "I shall require a moment to deliberate."
+    d "After all, I wish to provide the chef with the utmost clarity."
+    d "I shall not be deterred by the prospect of a challenge."
+
 
     return
  
