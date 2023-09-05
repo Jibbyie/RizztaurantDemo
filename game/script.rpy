@@ -407,6 +407,10 @@ label start:
     d "After all, I wish to provide the chef with the utmost clarity."
     d "I shall not be deterred by the prospect of a challenge."
 
+    mc "Take your time, I'll be here when you're ready."
+    mc "{i}(You could speed it up just a tad bit though..){/i}"
+
+
 
     return
  
