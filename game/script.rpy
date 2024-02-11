@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # The script of the game goes in this file.
-=======
-﻿# The script of the game goes in this file.
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -24,7 +20,6 @@ image halfblack = "#00000088"
 default playerName = ""
 define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
 
-<<<<<<< HEAD
 default likes = ""
 default dislikes = ""
 default current_input = "likes"
@@ -57,8 +52,6 @@ screen notepad_screen():
 screen nt_button:
     textbutton "Notepad" action ShowMenu('notepad_screen')
 
-=======
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 
 define audio.background = "rizztaurantambience.mp3"
@@ -70,7 +63,6 @@ transform speaking:
     ease 0.2 zoom 1.03
 transform not_speaking:
     ease 0.2 zoom 1.0
-<<<<<<< HEAD
 transform bounce:
     pause .05
     yoffset 0
@@ -79,6 +71,15 @@ transform bounce:
     easein .175 yoffset -4
     easeout .175 yoffset 0
     yoffset 0
+    repeat
+transform shake:
+    pause .001
+    xoffset 0
+    easein .175 xoffset -1
+    easeout .175 xoffset 1
+    easein .175 xoffset -1
+    easeout .175 xoffset 1
+    xoffset 0
     repeat
 transform laugh:
     pause .01
@@ -89,8 +90,6 @@ transform laugh:
     easeout .175 yoffset 0
     yoffset 0
     repeat
-=======
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 init python:
     def daria_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -176,11 +175,9 @@ define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callb
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", what_slow_cps=50, callback=daria_callback)
-<<<<<<< HEAD
 image d1 = "Daria.png"
-image d2 = "DariaGlassesShine.png"
-=======
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
+image d2 = "DariaHappy.png"
+image d3 = "DariaAngry.png"
 define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
 define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
 define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_callback)
@@ -208,10 +205,7 @@ label start:
     with Dissolve(2.0)
 
     # Introducing MC's distaste for his job
-<<<<<<< HEAD
     hide screen nt_button
-=======
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/cps}{/i}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/cps}{/i}"
     "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/cps}{/i}"
@@ -284,11 +278,7 @@ label start:
     mc "I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?"
 
     play sound chairpullin
-<<<<<<< HEAD
     d "Indubitably. I shall engage without reservation."
-=======
-    d "Indubitably. I shall engage in partaking without reservation."
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     d "Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?"
     
@@ -305,7 +295,6 @@ label start:
     mc "{i}(I can't believe it! A real customer!){/i}"
     mc "{i}(Alright, stay calm, stay calm. It's just a menu.){/i}"
     mc "{i}(All I've got to do is bring it back. Like nothing's unusual.){/i}"
-<<<<<<< HEAD
     mc "{i}(Just gotta walk back there and then she'll decide what she wants, and I'll go tell the chef, and everything will be okay!){/i}"
 
     mc "{i}Ta-da!{/i}"
@@ -314,14 +303,6 @@ label start:
     show rizztaurantmenu at center 
     play sound paperflip
     pause 30.0
-=======
-    mc "{i}(Just gotta walk back there and then they'll decide what they want, and I'll go tell the chef, and everything will be normal!){/i}"
-
-    # Menu appears on screen
-    show rizztaurantmenu at truecenter 
-    play sound paperflip
-    mc "{i}Ta-da!{/i}"
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     mc "{i}(Oh who am I kidding, she's not going to want to eat any of this garbage..){/i}"
     play sound paperdown
@@ -438,15 +419,9 @@ label start:
 
     # Daria accepts the notion of the idea
     hide d
-<<<<<<< HEAD
     show d2 at laugh, center
     d "Oh-ho-ho-ho-ho-ho." # Introduce laughing animation in future
     hide d2
-=======
-    show dGlassesShine at center
-    d "Oh-ho-ho-ho-ho-ho." # Introduce laughing animation in future
-    hide dGlassesShine
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     show d at center
     d "You have quite the way with words fine gentleman. I am most impressed."
     d "To think of a culinary adventure tailored to my own preferences, it's positively thrilling!"
@@ -477,11 +452,7 @@ label start:
     mc "Um, well, let me know when you're ready and I'll explain the process."
     d "I am prepared to begin at your behest."
     mc "O-okay.. {i}(what the heck does behest mean?){/i}"
-<<<<<<< HEAD
     mc "So, first, you'll need to tell me what you would like to eat and what you dislike."
-=======
-    mc "So, uh, first, you'll need to tell me what you would like to eat."
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     mc "Then I'll relay it to the chef."
     mc "You can be as specific or as vague as you want."
     mc "The chef will do his best to create something that closely matches your requests."
@@ -491,19 +462,11 @@ label start:
     d "How delightful! I am most eager to begin."
 
     mc "Alright, let's get started then!"
-<<<<<<< HEAD
     mc "So, what are your preferences?"
-=======
-    mc "So, what would you like to eat?"
-    play sound paperflip
-    # placeholder replace with notebook drawing in future
-    show notebook at topright 
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     d "Hmmmm...."
     d "I shall require a moment to deliberate."
     d "After all, I wish to provide the chef with the utmost clarity."
-<<<<<<< HEAD
     mc "Take your time, I'll be here when you're ready."
     mc "{i}(You could speed it up just a tad bit though..){/i}"
 
@@ -517,21 +480,49 @@ label start:
     show d with Dissolve(0.5)
     d "I have concluded my deliberation."
 
+    hide d with Dissolve(0.5)
+    stop music fadeout 0.5
     "Daria will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!"
     "You'll need to jot down her likes and dislikes in your notebook. You can access it by clicking the Notepad button at the top left of the screen once she is done talking."
     "Any like or dislike will be {b}bolded{/b} like such when she talks."
     "Try not to abuse the History button and do your best to remember what she says!"
+
+    play sound "READY.mp3"
     "Ready?"
-    "Good luck!"
+
+    menu:
+        "READY!":
+            jump ready
+    
+    label ready:
+        play sound "GO.mp3"
+        "Good luck!"
 
     hide d
-    show d1 at bounce, center
-    d "{cps=65}{nw}I am most partial to the following: {b}Noodles, cashew nuts, paprika, halloumi cheese,{/b}{/cps}"
-    d "{cps=65}{nw}{b}soy beans, soy sauce, garlic, red onion.{/b}{/cps}"
-    d "{cps=65}{nw}I am averse to the following: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed,{/b}{/cps}"
-    d "{cps=65}{nw}and lastly, I am not particularly fond of the taste of {b}goat cheese.{/b}{/cps}"
+    show d2 at bounce, center
+    play music "talkingfastmusic.mp3"
+    d "{cps=58}{nw}I am most enamoured with the following: {b}Noodles, cashew nuts, paprika, halloumi cheese{/b}, oh am I indeed very fond of halloumi cheese! With that being said, I am also quite fond of,{/cps}"
+    d "{cps=58}{nw}{b}soy beans, soy sauce, garlic, red onion.{/b} I truly believe garlic is the ultimate root vegetable, unrivaled by any other.{/cps}"
+    d "{cps=58}{nw}The pungent aroma, the depth of flavor... it simply elevates every dish it graces.{/cps}"
+    d "{cps=58}{nw}Ah, but let us not forget the delicate allure of {b}avocado, balsamic vinegar, sun-dried tomatoes, saffron{/b}. Each adds a symphony of flavors to any dish, don't you agree?{/cps}"
+    d "{cps=58}{nw}Saffron, in particular, with its golden hue and delicate fragrance, is like a touch of magic in every bite.{/cps}"
+    d "{cps=58}{nw}And of course, the exquisite taste of {b}dark chocolate, fresh basil, truffle oil, caramelized onions{/b}. A true culinary delight for the discerning palate.{/cps}"
+    d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavor experience like no other.{/cps}"
     hide d1
+    hide d2
+    show d3 at shake, center
+    d "{cps=58}{nw}Now, onto my dislikes: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed{/b}. Each one a lamentable addition to any meal.{/cps}"
+    d "{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}"
+    d "{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}"
+    d "{cps=58}{nw}The sharp tanginess of goat cheese, combined with its distinct aroma, is enough to make me question the sanity of its creators.{/cps}"
+    hide d1
+    hide d2
+    hide d3
     show d at center
+    stop music fadeout 0.5
+    pause 1.0
+
+    play music dariamainbgm volume 0.5 fadein 0.5
     d "I hope this is sufficient for the chef to work with."
 
     mc "Wh- Uhh-, yeah! That's perfect!... I think."
@@ -553,14 +544,6 @@ label start:
 
 
     # mc "She says she likes [likes], and dislikes [dislikes]."
-=======
-    d "I shall not be deterred by the prospect of a challenge."
-
-    mc "Take your time, I'll be here when you're ready."
-    mc "{i}(You could speed it up just a tad bit though..){/i}"
-
-
->>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     return
  
