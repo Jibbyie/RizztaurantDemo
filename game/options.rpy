@@ -155,7 +155,10 @@ define config.save_directory = "Rizztaurant_Demo-1690384081"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
+<<<<<<< HEAD
 #define config.rollback_enabled = False
+=======
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
 
 ## Build configuration #########################################################

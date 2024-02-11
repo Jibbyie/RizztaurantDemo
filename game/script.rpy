@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # The script of the game goes in this file.
+=======
+﻿# The script of the game goes in this file.
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -20,6 +24,7 @@ image halfblack = "#00000088"
 default playerName = ""
 define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
 
+<<<<<<< HEAD
 default likes = ""
 default dislikes = ""
 default current_input = "likes"
@@ -52,6 +57,8 @@ screen notepad_screen():
 screen nt_button:
     textbutton "Notepad" action ShowMenu('notepad_screen')
 
+=======
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 
 define audio.background = "rizztaurantambience.mp3"
@@ -63,6 +70,7 @@ transform speaking:
     ease 0.2 zoom 1.03
 transform not_speaking:
     ease 0.2 zoom 1.0
+<<<<<<< HEAD
 transform bounce:
     pause .05
     yoffset 0
@@ -81,6 +89,8 @@ transform laugh:
     easeout .175 yoffset 0
     yoffset 0
     repeat
+=======
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 init python:
     def daria_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -166,8 +176,11 @@ define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callb
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", what_slow_cps=50, callback=daria_callback)
+<<<<<<< HEAD
 image d1 = "Daria.png"
 image d2 = "DariaGlassesShine.png"
+=======
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
 define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
 define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_callback)
@@ -195,7 +208,10 @@ label start:
     with Dissolve(2.0)
 
     # Introducing MC's distaste for his job
+<<<<<<< HEAD
     hide screen nt_button
+=======
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/cps}{/i}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/cps}{/i}"
     "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/cps}{/i}"
@@ -268,7 +284,11 @@ label start:
     mc "I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?"
 
     play sound chairpullin
+<<<<<<< HEAD
     d "Indubitably. I shall engage without reservation."
+=======
+    d "Indubitably. I shall engage in partaking without reservation."
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     d "Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?"
     
@@ -285,6 +305,7 @@ label start:
     mc "{i}(I can't believe it! A real customer!){/i}"
     mc "{i}(Alright, stay calm, stay calm. It's just a menu.){/i}"
     mc "{i}(All I've got to do is bring it back. Like nothing's unusual.){/i}"
+<<<<<<< HEAD
     mc "{i}(Just gotta walk back there and then she'll decide what she wants, and I'll go tell the chef, and everything will be okay!){/i}"
 
     mc "{i}Ta-da!{/i}"
@@ -293,6 +314,14 @@ label start:
     show rizztaurantmenu at center 
     play sound paperflip
     pause 30.0
+=======
+    mc "{i}(Just gotta walk back there and then they'll decide what they want, and I'll go tell the chef, and everything will be normal!){/i}"
+
+    # Menu appears on screen
+    show rizztaurantmenu at truecenter 
+    play sound paperflip
+    mc "{i}Ta-da!{/i}"
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     mc "{i}(Oh who am I kidding, she's not going to want to eat any of this garbage..){/i}"
     play sound paperdown
@@ -409,9 +438,15 @@ label start:
 
     # Daria accepts the notion of the idea
     hide d
+<<<<<<< HEAD
     show d2 at laugh, center
     d "Oh-ho-ho-ho-ho-ho." # Introduce laughing animation in future
     hide d2
+=======
+    show dGlassesShine at center
+    d "Oh-ho-ho-ho-ho-ho." # Introduce laughing animation in future
+    hide dGlassesShine
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     show d at center
     d "You have quite the way with words fine gentleman. I am most impressed."
     d "To think of a culinary adventure tailored to my own preferences, it's positively thrilling!"
@@ -442,7 +477,11 @@ label start:
     mc "Um, well, let me know when you're ready and I'll explain the process."
     d "I am prepared to begin at your behest."
     mc "O-okay.. {i}(what the heck does behest mean?){/i}"
+<<<<<<< HEAD
     mc "So, first, you'll need to tell me what you would like to eat and what you dislike."
+=======
+    mc "So, uh, first, you'll need to tell me what you would like to eat."
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
     mc "Then I'll relay it to the chef."
     mc "You can be as specific or as vague as you want."
     mc "The chef will do his best to create something that closely matches your requests."
@@ -452,11 +491,19 @@ label start:
     d "How delightful! I am most eager to begin."
 
     mc "Alright, let's get started then!"
+<<<<<<< HEAD
     mc "So, what are your preferences?"
+=======
+    mc "So, what would you like to eat?"
+    play sound paperflip
+    # placeholder replace with notebook drawing in future
+    show notebook at topright 
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     d "Hmmmm...."
     d "I shall require a moment to deliberate."
     d "After all, I wish to provide the chef with the utmost clarity."
+<<<<<<< HEAD
     mc "Take your time, I'll be here when you're ready."
     mc "{i}(You could speed it up just a tad bit though..){/i}"
 
@@ -506,6 +553,14 @@ label start:
 
 
     # mc "She says she likes [likes], and dislikes [dislikes]."
+=======
+    d "I shall not be deterred by the prospect of a challenge."
+
+    mc "Take your time, I'll be here when you're ready."
+    mc "{i}(You could speed it up just a tad bit though..){/i}"
+
+
+>>>>>>> 6a7022d9d066f5fe896b78d70faf6bbb83f2385e
 
     return
  
