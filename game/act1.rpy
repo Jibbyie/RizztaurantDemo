@@ -335,3 +335,5 @@ label act1:
     show screen nt_button
     mc "{i}(I'll need to remember this for when I tell Chef Rizz.){/i}"
     mc "I'll go tell the chef right away!"
+
+    call act2
