@@ -90,7 +90,32 @@ label act2:
    cr "Just making sure you're alright sugar."
    mc "Anyways, don't you remember what you told me?"
    mc "You wanted to be the greatest chef in the world?"
- 
+   mc "This is your chance to prove it!-{nw}"
+   play sound phoneringing volume 0.2
+   show bgkitchens with vpunch
+   pause 3.0
+   
+   cr "Pardon me sugar, I think that's my phone, would you be a doll and pick it up and put it on speaker for me?"
+   play sound iphoneunlock volume 0.5
+   mc "*Sigh*, make it quick Chef."
+
+   cr "{i}Hey babygirl, is this who I think it is?{/i}"
+   play sound call1 
+   pause 1.0
+   cr "{i}I'd never forget you baby, you know you're important to me.{/i}"
+   play sound call2
+   pause 1.0
+   cr "{i}Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love.{/i}"
+   play sound call3
+   pause 2.0
+   cr "{i}You know Daddy's got you kitten.{/i}"
+   play sound call4
+   pause 3.0
+   cr "{i}Till we meet again Princess.{/i}"
+
+   pause 0.5
+   mc "{i}(I think I just threw up a little.){/i}"
+   
 
    # show cr at center behind Sparkle
 

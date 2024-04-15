@@ -109,7 +109,6 @@ transform walking:
     easeout .175 yoffset 0
     yoffset 0
 transform running:
-    pause .01
     yoffset 0
     easein .175 yoffset -20
     easeout .175 yoffset 0
@@ -202,7 +201,7 @@ init python:
             elif event == 'end': 
                 renpy.show("crCooking", zorder=0, at_list=[not_speaking])
 
-define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callback)
+define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
