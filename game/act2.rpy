@@ -26,8 +26,14 @@ label act2:
    with flashbulb
    cr2 "{cps=15}{i}How can I be of service?{/i}{/cps}"
    hide crNoCallback
-   show cr at center
+
+   show cr at center behind Sparkle
+
    cr "I love you"
+   show Sparkle zorder 2000:
+      ypos -0.15
+      xalign 0.589
+   cr "Meow"
    # mc "She says she likes [likes], and dislikes [dislikes]."
    
     

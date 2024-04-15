@@ -13,6 +13,7 @@ image d = "Daria.png"
 image dHappy = "DariaHappy.png"
 image dAngry = "DariaAngry.png"
 image dSparkle = "DariaSparkle.png"
+image Sparkle = "Sparkle.png"
 image dGlare = "DariaGlare.png"
 image dGlassesShine = "DariaGlassesShine.png"
 image dThinking = "DariaThinking.png"
@@ -20,13 +21,21 @@ image rizztaurantmenu = "menu.png"
 image halfblack = "#00000088"
 image black = "#00000000"
 
-default playerName = ""
-define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
-define cr2 = Character("Chef Rizz", image="CheffRizz.png")
+image bgroom = "bgkitchen.jpg"
+image bgkitchen1 = "bgkitchen1.png"
+image bgkitchen1dark = "bgkitchen1dark.png"
+image doombackground = "doombackground.png"
 
+default playerName = ""
 default likes = ""
 default dislikes = ""
 default current_input = "likes"
+
+define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
+define cr2 = Character("Chef Rizz", image="CheffRizz.png")
+define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
+define audio.background = "rizztaurantambience.mp3"
+
 
 # Notebook Screen
 screen notepad_screen():
@@ -56,15 +65,8 @@ screen notepad_screen():
 screen nt_button:
     textbutton "Notepad" action ShowMenu('notepad_screen')
 
-define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
-
-define audio.background = "rizztaurantambience.mp3"
-
-image bgroom = "bgkitchen.jpg"
-image bgkitchen1 = "bgkitchen1.png"
-image bgkitchen1dark = "bgkitchen1dark.png"
-image doombackground = "doombackground.png"
-
+transform half_size:
+    zoom 0.5
 transform speaking:
     ease 0.2 zoom 1.03
 transform not_speaking:
@@ -96,6 +98,7 @@ transform laugh:
     easeout .175 yoffset 0
     yoffset 0
     repeat
+
 init python:
     def daria_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -181,9 +184,6 @@ define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callb
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("Daria", image="Daria.png", what_slow_cps=50, callback=daria_callback)
-image d1 = "Daria.png"
-image d2 = "DariaHappy.png"
-image d3 = "DariaAngry.png"
 define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
 define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
 define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_callback)
