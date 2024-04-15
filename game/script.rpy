@@ -10,6 +10,8 @@ image crDark = "CheffRizzDark.png"
 image crAwkward = "ChefRizzAwkward.png"
 image crCooking = "ChefRizzCooking.png"
 image d = "Daria.png"
+image d2 = "DariaHappy.png"
+image d3 = "DariaAngry.png"
 image dHappy = "DariaHappy.png"
 image dAngry = "DariaAngry.png"
 image dSparkle = "DariaSparkle.png"
@@ -98,6 +100,26 @@ transform laugh:
     easeout .175 yoffset 0
     yoffset 0
     repeat
+transform walking:
+    pause .01
+    yoffset 0
+    easein .175 yoffset -20
+    easeout .175 yoffset 0
+    easein .175 yoffset -8
+    easeout .175 yoffset 0
+    yoffset 0
+transform running:
+    pause .01
+    yoffset 0
+    easein .175 yoffset -20
+    easeout .175 yoffset 0
+    easein .175 yoffset -8
+    easeout .175 yoffset 0
+    yoffset 0
+    repeat
+    
+transform leftoffscreen:
+    xalign -3.0
 
 init python:
     def daria_callback(event, interact=True, **kwargs):
@@ -183,13 +205,12 @@ init python:
 define cr = Character("Chef Rizz", image="ChefRizz.png", callback=chefRizz_callback)
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
-define d = Character("Daria", image="Daria.png", what_slow_cps=50, callback=daria_callback)
-define dHappy = Character("Daria", image="DariaHappy.png", callback=daria_callback)
-define dAngry = Character("Daria", image="DariaAngry.png", callback=daria_callback)
-define dSparkle = Character("Daria", image="DariaSparkle.png", callback=daria_callback)
-define dGlare = Character("Daria", image="DariaGlare.png", callback=daria_callback)
-define dGlassesShine = Character("Daria", image="DariaGlassesShine.png", callback=daria_callback)
-
+define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
+define dHappy = Character("HiraganaLover95", image="DariaHappy.png", callback=daria_callback)
+define dAngry = Character("HiraganaLover95", image="DariaAngry.png", callback=daria_callback)
+define dSparkle = Character("HiraganaLover95", image="DariaSparkle.png", callback=daria_callback)
+define dGlare = Character("HiraganaLover95", image="DariaGlare.png", callback=daria_callback)
+define dGlassesShine = Character("HiraganaLover95", image="DariaGlassesShine.png", callback=daria_callback)
 
 # The game starts here.
 label start:
@@ -199,7 +220,7 @@ label start:
         $playerName = playerName.strip()
         if playerName == "":
             $playerName="Joe Momma"
-        if playerName=="Daria".lower() or playerName=="Chef Rizz".lower():
+        if playerName=="HiraganaLover95".lower() or playerName=="Chef Rizz".lower():
             "Please choose a different name, not one that is already an NPC!"
             jump chooseName
     call act1

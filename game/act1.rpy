@@ -8,9 +8,9 @@ label act1:
 
     # Introducing MC's distaste for his job
     hide screen nt_button
-    "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/cps}{/i}"
+    "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts.){/cps}{/i}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/cps}{/i}"
-    "{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/cps}{/i}"
+    "{cps=30}{i}(I wonder if I should just close up shop and go home.){/cps}{/i}"
     mc "{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}"
     
     # New customer comes into the scene
@@ -25,14 +25,15 @@ label act1:
     play sound walking
     mc "{i}(I think I hear footsteps... Wait, do I? Is it just my imagination?){/i}"
     play sound walking
-    mc "{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-){/i}{nw}"
-
-    # Daria introduction
+    mc "{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the last time we had one.){/i}"
+    mc "{i}Ever since that incident with Chef Rizz and that guy's girlfriend I-{/i}{nw}"
+    
+    # Daria(HiraganaLover95) introduction
     show bgkitchen with hpunch
     stop music
     show d at center with easeinright
     play music dariamainbgm volume 0.5 fadein 1.0 
-    "{cps=50}Konnichiwa. Does this establishment currently harbor any occupants?{/cps}"
+    "{cps=50}Konnichiwa. Does this establishment currently harbour any occupants?{/cps}"
 
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
     mc "{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}"
@@ -61,7 +62,7 @@ label act1:
         "{cps=50}Salutations, diligent restaurant employee.{/cps}"
     "{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}"
     "{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}"
-    d "You may address my humble self as Daria."
+    d "You may address my humble self as my Reddit pseudonym - HiraganaLover95."
     hide d
     show dGlare at center
     play sound shing
@@ -75,7 +76,8 @@ label act1:
     d "Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?"
 
     mc "Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up."
-    mc "{i}(That was a bit weird..){/i}"
+    mc "{i}(That was a bit weird...){/i}"
+    mc "{i}(Wait what.. a Reddit pseudonym? I don't think I should even question that.)"
     play sound chairpullout
     mc "I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?"
 
@@ -132,13 +134,13 @@ label act1:
     mc "{i}(Why not offer something unique? Something that'll grab her attention. Like...){/i}"
 
     mc "{i}(I'll ask her if she's up for a culinary adventure. You know, something different from the usual fare.){/i}"
-    mc "{i}(A chance to savor the unexpected. After all, who wants predictable when you can have... surprise?){/i}"
+    mc "{i}(A chance to savour the unexpected. After all, who wants predictable when you can have... surprise?){/i}"
     mc "{i}(Yeah, that sounds good!){/i}"
 
     mc "{i}(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.'){/i}"
     mc "{i}(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.){/i}"
     mc "{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}"
-    mc "{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavors, a melody of imagination!){/i}"
+    mc "{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavours, a melody of imagination!){/i}"
     mc "{i}(Yep, I'm screwed.){/i}"
     
     # MC returns to Daria to introduce main idea
@@ -154,7 +156,7 @@ label act1:
     play sound stomachgrowl
     $ renpy.pause(3.2)
     mc "{cps=10}Oh, uh, miss are you alrigh-{nw}"
-    d "{cps=5}I apologize for my impatience, but I am in dire need of sustenance."
+    d "{cps=5}I apologise for my impatience, but I am in dire need of sustenance."
 
     mc "My sincere apologies for the wait!"
     menu:
@@ -192,7 +194,7 @@ label act1:
         d "I must say, I wasn't expecting such.. creativity in the realm of taste combinations."
         d "But alas, I regret to inform you these.. {i}meals,{/i} presented here are not to my liking."
         d "I am most apologetic."
-        d "Thank you for your courteous hospitality. I shall be taking my leav-.{nw}"
+        d "Thank you for your courteous hospitality. But i'm going to have to-.{nw}"
         mc "Wait!"
         d "Pardon me?"
         mc "I mean, uh, I'm sorry to hear that."
@@ -215,14 +217,14 @@ label act1:
     mc "{i}(She really needs to stop doing that..){/i}"
     mc "It's a chance to have a meal tailored precisely to your tastes."
     mc "Our Michelin-starred chef will personally craft your culinary desires into reality."
-    mc "It's a symphony of flavors, a melody of imagination!"
+    mc "It's a symphony of flavours, a melody of imagination!"
     mc "Miss, it's only available for a limited time, you should act now before it's too late!"
     mc "{i}(I am so totally screwed){/i}"
 
     # Daria accepts the notion of the idea
     hide d
     show d2 at laugh, center
-    d "Oh-ho-ho-ho-ho-ho." # Introduce laughing animation in future
+    d "Oh-ho-ho-ho-ho-ho." 
     hide d2
     show d at center
     d "You have quite the way with words fine gentleman. I am most impressed."
@@ -237,18 +239,17 @@ label act1:
     mc "I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations."
     mc "But don't worry, it's bound to be an unforgettable experience in its own right."
 
-    d "Oh, how marvelous it sounds! An opportunity to tantalize my taste buds and embrace the unexpected."
-    d "The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected."
+    d "Oh, how marvelous it sounds! An opportunity to tantalise my taste buds and embrace the unexpected."
+    d "After all, artistry often emerges from the unexpected."
     d "Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit."
 
     # MC brings up mention of Chef Rizz
     mc "Uh, sure!"
     mc "{i}(Wow, she's really into this huh...){/i}"
     mc "Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself."
-    mc "{i}(I hope you know what you're getting into, Daria...){/i}"
+    mc "{i}(I hope you know what you're getting into...){/i}"
 
     d "Oh but of course, I live for the suspense."
-    d "I shall await the chef's creation with bated breath."
     d "Apprise, how do we commence such an immense undertaking?"
     
     mc "Um, well, let me know when you're ready and I'll explain the process."
@@ -258,9 +259,9 @@ label act1:
     mc "Then I'll relay it to the chef."
     mc "You can be as specific or as vague as you want."
     mc "The chef will do his best to create something that closely matches your requests."
-    mc "The sky's the limit, as long as what you propose is within reason {i}(and our budget hopefully..){/i}."
+    mc "The sky's the limit, as long as what you propose is within reason."
     d "I see, I see."
-    d "I shall endeavor to be as specific as possible."
+    d "I shall endeavour to be as specific as possible."
     d "How delightful! I am most eager to begin."
 
     mc "Alright, let's get started then!"
@@ -283,7 +284,7 @@ label act1:
 
     hide d with Dissolve(0.5)
     stop music fadeout 0.5
-    "Daria will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!"
+    "HiraganaLover95 will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!"
     "You'll need to jot down her likes and dislikes in your notebook. You can access it by clicking the Notepad button at the top left of the screen once she is done talking."
     "Any like or dislike will be {b}bolded{/b} like such when she talks."
     "Try not to abuse the History button and do your best to remember what she says!"
@@ -304,11 +305,11 @@ label act1:
     play music "talkingfastmusic.mp3"
     d "{cps=58}{nw}I am most enamoured with the following: {b}Noodles, cashew nuts, paprika, halloumi cheese{/b}, oh am I indeed very fond of halloumi cheese! With that being said, I am also quite fond of,{/cps}"
     d "{cps=58}{nw}{b}soy beans, soy sauce, garlic, red onion.{/b} I truly believe garlic is the ultimate root vegetable, unrivaled by any other.{/cps}"
-    d "{cps=58}{nw}The pungent aroma, the depth of flavor... it simply elevates every dish it graces.{/cps}"
-    d "{cps=58}{nw}Ah, but let us not forget the delicate allure of {b}avocado, balsamic vinegar, sun-dried tomatoes, saffron{/b}. Each adds a symphony of flavors to any dish, don't you agree?{/cps}"
+    d "{cps=58}{nw}The pungent aroma, the depth of flavour... it simply elevates every dish it graces.{/cps}"
+    d "{cps=58}{nw}Ah, but let us not forget the delicate allure of {b}avocado, balsamic vinegar, sun-dried tomatoes, saffron{/b}. Each adds a symphony of flavours to any dish, don't you agree?{/cps}"
     d "{cps=58}{nw}Saffron, in particular, with its golden hue and delicate fragrance, is like a touch of magic in every bite.{/cps}"
     d "{cps=58}{nw}And of course, the exquisite taste of {b}dark chocolate, fresh basil, truffle oil, caramelized onions{/b}. A true culinary delight for the discerning palate.{/cps}"
-    d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavor experience like no other.{/cps}"
+    d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavour experience like no other.{/cps}"
     hide d1
     hide d2
     show d3 at shake, center
