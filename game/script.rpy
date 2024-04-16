@@ -63,6 +63,13 @@ image daria angry:
     pause 0.3
     repeat
 
+image daria glasses shine:
+    "GlassesShine.png" with Dissolve(0.6)
+    pause 1.0
+    "Daria.png" with Dissolve(0.2)
+    pause 0.5 
+    repeat
+
 # Defaults
 default playerName = ""
 default likes = ""
@@ -323,7 +330,7 @@ init python:
                 renpy.show("crEyebrowRaise", zorder=0, at_list=[not_speaking])
 
 # Chef Rizz
-define cr = Character("Cheff Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
+define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
 define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png", callback=chefRizz_callback)

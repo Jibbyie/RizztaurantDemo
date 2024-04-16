@@ -162,7 +162,7 @@ label act1:
     # Intermission, MC introduces main idea (core gameplay loop)
     window hide
     $ quick_menu = False
-    show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
+    show text "{color=#80400B}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
     $ renpy.pause(3, hard=True)
     $ quick_menu = True
     hide text
@@ -279,19 +279,21 @@ label act1:
     show d at center
     d "You have quite the way with words fine gentleman. I am most impressed."
     d "To think of a culinary adventure tailored to my own preferences, it's positively thrilling!"
-    d "The prospect of this Michelin-starred chef weaving a symphony of flavors for my palate fills me with delight."
+    d "The prospect of this Michelin-starred chef weaving a symphony of flavours for my palate fills me with delight."
     d "And only for a limited time? How could I possibly resist?"
     d "I wholeheartedly embrace this opportunity!"
 
     mc "{i}(Wait, what?){/i}"
+    show daria glasses shine zorder 1000 with Dissolve(0.6)
     mc "{i}(She actually wants to try it?){/i}"
     mc "{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}"
     mc "I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations."
     mc "But don't worry, it's bound to be an unforgettable experience in its own right."
 
-    d "Oh, how marvelous it sounds! An opportunity to tantalise my taste buds and embrace the unexpected."
+    hide daria glasses shine
+    d "Oh, how marvelous it sounds! An opportunity to tantalise my taste buds."
     d "After all, artistry often emerges from the unexpected."
-    d "Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit."
+    d "Fear not, kind sir, for I am prepared to embark with an open heart and an adventurous spirit."
 
     # MC brings up mention of Chef Rizz
     mc "Uh, sure!"
@@ -326,7 +328,7 @@ label act1:
 
     window hide
     hide d with Dissolve(1.0)
-    show text "{color=#FFFF00}{size=+30}{b}One Eternity Later{/b}{/color}" with Dissolve(1.5)
+    show text "{color=#80400B}{size=+30}{b}One Eternity Later{/b}{/color}" with Dissolve(1.5)
     $ renpy.pause(5, hard=True)
     hide text
 
@@ -368,6 +370,7 @@ label act1:
     d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavour experience like no other.{/cps}"
     hide d2
     show d3 at shake, center
+    show daria angry
     d "{cps=58}{nw}Now, onto my dislikes: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed{/b}. Each one a lamentable addition to any meal.{/cps}"
     d "{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}"
     d "{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}"
@@ -375,6 +378,7 @@ label act1:
     $ quick_menu = False
     hide d2
     hide d3
+    hide daria angry
     show d at center
     stop music fadeout 0.5
     pause 1.0
