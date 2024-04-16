@@ -21,8 +21,9 @@ image chefKissSmudged = "ChefRizzKissSmudged"
 # Daria drawings
 image d = "Daria.png"
 image d2 = "DariaHappy.png"
-image d3 = "DariaAngry.png"
+image d3 = "DariaAngryLarge.png"
 image dHappy = "DariaHappy.png"
+image dAngry = "DariaAngryLarge.png"
 image dFlushed = "DariaFlushed.png"
 image dDetective = "DetectiveDaria.png"
 image dDetectiveGlare = "DetectiveDariaGlare.png"
@@ -45,7 +46,7 @@ image dfb = "DetectiveFedoraBadge.png"
 # Misc
 image rizztaurantmenu = "menu.png"
 image halfblack = "#00000088"
-image black = "#00000000"
+image black = "#000000ff"
 
 # Backgrounds
 image bgroom = "bgkitchen.jpg"
@@ -168,6 +169,14 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("dHappy", zorder=0, at_list=[not_speaking])
+        
+        elif renpy.showing("dAngry"):
+        
+            if event == 'begin': 
+                renpy.show("dAngry", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dAngry", zorder=0, at_list=[not_speaking])
 
         elif renpy.showing("dFlushed"):
         
@@ -304,6 +313,7 @@ define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=
 # Daria
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
 define dHappy = Character("HiraganaLover95", image="DariaHappy.png", callback=daria_callback)
+define dHappy = Character("HiraganaLover95", image="DariaAngryLarge.png", callback=daria_callback)
 define dThinking = Character("HiraganaLover95", image="DariaThinking.png", callback=daria_callback)
 define dFlushed = Character("HiraganaLover95", image="DariaFlushed.png", callback=daria_callback)
 define dDetective = Character("HiraganaLover95", image="DetectiveDaria.png", callback=daria_callback)

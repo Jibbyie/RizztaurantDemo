@@ -150,6 +150,7 @@ style namebox:
 
 style say_label:
     properties gui.text_properties("name", accent=True)
+    bold True
     xalign gui.name_xalign
     yalign 0.5
 
@@ -257,6 +258,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+            yoffset -30
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

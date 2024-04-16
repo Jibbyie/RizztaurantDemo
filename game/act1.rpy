@@ -1,4 +1,6 @@
 label act1:
+    show black
+    scene black
     stop music fadeout 2.0
 
     play music rizztaurantambience volume 0.2
@@ -51,15 +53,26 @@ label act1:
     label response_in_japanese:
         $ renpy.fix_rollback()
         stop music
+        hide d
+        show dThinking
         "{cps=50}P-p-pardon me?{/cps}"
+        show sweat
+        show flushed
+        with Dissolve(2.0)
         mc "I'm sorry, you speak Japanese don't you?"
         "{cps=50}I uh, uh-{/cps}"
         "{cps=50}Yes, mochiron, you just, caught me off guard... sumimasen..{/cps}"
         "{cps=50}I'm sorry, I'm just... simply, uh.. not used to being greeted in the language of the homeland. That is all. Yes of course.{/cps}"
         "{cps=50}Ahem.{/cps}"
+        hide sweat
+        hide flushed
+        with Dissolve(0.1)
+        hide dThinking
+        show d
         play music dariamainbgm volume 0.5
 
     label main_core_loop:
+        $ renpy.fix_rollback()
         "{cps=50}Salutations, diligent restaurant employee.{/cps}"
     "{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}"
     "{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}"
@@ -313,14 +326,12 @@ label act1:
     d "{cps=58}{nw}Saffron, in particular, with its golden hue and delicate fragrance, is like a touch of magic in every bite.{/cps}"
     d "{cps=58}{nw}And of course, the exquisite taste of {b}dark chocolate, fresh basil, truffle oil, caramelized onions{/b}. A true culinary delight for the discerning palate.{/cps}"
     d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavour experience like no other.{/cps}"
-    hide d1
     hide d2
     show d3 at shake, center
     d "{cps=58}{nw}Now, onto my dislikes: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed{/b}. Each one a lamentable addition to any meal.{/cps}"
     d "{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}"
     d "{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}"
     d "{cps=58}{nw}The sharp tanginess of goat cheese, combined with its distinct aroma, is enough to make me question the sanity of its creators.{/cps}"
-    hide d1
     hide d2
     hide d3
     show d at center
