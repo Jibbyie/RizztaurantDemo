@@ -2,7 +2,7 @@ label act2:
    # Act 2, Chef Rizz intro and kitchen scene
    stop music fadeout 1.0
 
-   play sound walking
+   play sound walking noloop
    hide d with Dissolve(1.0)
 
    hide bgroom with Dissolve(0.5)
@@ -14,7 +14,7 @@ label act2:
    mc "Chef! We've got a customer!"
    mc "Chef??"
    mc "{i}Where are those damned lights..{/i}"
-   play sound chefdoor volume 0.2
+   play sound chefdoor volume 0.2 noloop
    $ renpy.pause(7.2, hard=True)
    "{cps=20}{i}{font=Tangerine_Bold.ttf}{size=60}A customer you say?...{/font}{/size}{/i}{/cps}"
 
@@ -46,10 +46,12 @@ label act2:
    cr "Are you sure it's not another youtuber thinking this place is haunted?"
    mc "I'm very sure Chef, she's an... eccentric young woman."
    hide cr
-   show cr2
+   show crEyebrowRaise at center
    cr2 "A young woman you say?.."
-   show cr at center
+   hide crEyebrowRaise
+   show cr2
    hide cr2
+   show cr
    cr2 "My oh my.. I better go introduce myself.."
    play sound running volume 0.5
    show cr at running, leftoffscreen
@@ -127,7 +129,6 @@ label act2:
    hide cr2
    show cr
 
-   pause 1.5
    mcthinking "(I think I just threw up a little.)"
    
 

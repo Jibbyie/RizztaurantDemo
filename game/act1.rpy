@@ -182,6 +182,7 @@ label act1:
             jump presenting_idea
 
     label showing_menu:
+        $ renpy.fix_rollback()
         d "Oh?"
         hide dGlare
         show d at center
@@ -203,6 +204,7 @@ label act1:
         jump presenting_idea
 
     label presenting_idea:
+        $ renpy.fix_rollback()
         hide dGlare
         show d at center
         d "{i}Hmmmmm..?{/i}"
@@ -216,9 +218,6 @@ label act1:
     hide dGlare
     show d at center
     mc "{i}(She really needs to stop doing that..){/i}"
-    show dfb with Dissolve(2.0)
-    hide d
-    show dDetective
     mc "It's a chance to have a meal tailored precisely to your tastes."
     mc "Our Michelin-starred chef will personally craft your culinary desires into reality."
     mc "It's a symphony of flavours, a melody of imagination!"

@@ -10,6 +10,13 @@ image crNoCallback = "CheffRizz.png"
 image crDark = "CheffRizzDark.png"
 image crAwkward = "ChefRizzAwkward.png"
 image crCooking = "ChefRizzCooking.png"
+image crEyeClosed = "ChefRizzEyeClosed.png"
+image crEyebrowRaise = "ChefRizzEyebrowRaise.png"
+
+# Chef Emotions
+image chefSweat = "ChefRizzSweat.png"
+image chefKiss = "ChefRizzKiss"
+image chefKissSmudged = "ChefRizzKissSmudged"
 
 # Daria drawings
 image d = "Daria.png"
@@ -32,6 +39,7 @@ image sweat = "Sweat.png"
 image glare = "Glare.png"
 image angrylarge = "AngryLarge.png"
 image angrysmall = "AngrySmall.png"
+image glasshesShine = "GlassesShine.png"
 image dfb = "DetectiveFedoraBadge.png"
 
 # Misc
@@ -268,11 +276,32 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("crCooking", zorder=0, at_list=[not_speaking])
+        
+        elif renpy.showing("crEyeClosed"):
+        
+            if event == 'begin': 
+                renpy.show("crEyeClosed", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("crEyeClosed", zorder=0, at_list=[not_speaking])
 
-define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
+        elif renpy.showing("crEyebrowRaise"):
+        
+            if event == 'begin': 
+                renpy.show("crEyebrowRaise", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("crEyebrowRaise", zorder=0, at_list=[not_speaking])
+
+# Chef Rizz
+define cr = Character("Cheff Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
 define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
+define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png", callback=chefRizz_callback)
+define crEyebrowRaise = Character("Chef Rizz", image="ChefRizzEyeClosed.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
+
+# Daria
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
 define dHappy = Character("HiraganaLover95", image="DariaHappy.png", callback=daria_callback)
 define dThinking = Character("HiraganaLover95", image="DariaThinking.png", callback=daria_callback)
