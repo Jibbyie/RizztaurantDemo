@@ -63,8 +63,8 @@ default current_input = "likes"
 default show_quick_menu = True
 
 # MC and effects definitions
-define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
-define mcthinking = Character("[playerName]", color="#000000", what_slow_cps=30, what_prefix="{i}", what_suffix="{/i}")
+define mc = Character("[playerName]", color="#b32c03", what_slow_cps=30)
+define mcthinking = Character("[playerName]", color="#b32c03", what_slow_cps=30, what_prefix="{i}", what_suffix="{/i}")
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 define audio.background = "rizztaurantambience.mp3"
 

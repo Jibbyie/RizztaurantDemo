@@ -106,7 +106,7 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text who id "who" color "#b32c03"
 
         text what id "what"
 
@@ -149,8 +149,9 @@ style namebox:
     padding gui.namebox_borders.padding
 
 style say_label:
-    properties gui.text_properties("name", accent=True)
+    color gui.namebox_colour
     bold True
+    properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
 
