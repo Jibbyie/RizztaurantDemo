@@ -77,7 +77,7 @@ label act1:
 
     mc "Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up."
     mc "{i}(That was a bit weird...){/i}"
-    mc "{i}(Wait what.. a Reddit pseudonym? I don't think I should even question that.)"
+    mc "{i}(Wait what.. a Reddit pseudonym? I-I don't think I should even question that..)"
     play sound chairpullout
     mc "I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?"
 

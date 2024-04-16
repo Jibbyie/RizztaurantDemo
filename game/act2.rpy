@@ -25,23 +25,31 @@ label act2:
    scene bgkitchens 
    show crNoCallback at center
    with flashbulb
-   cr "{cps=18}{i}How can I be of service?{/i}{/cps}"
+   cr2 "{i}How can I be of service?{/i}"
    hide crNoCallback
    show cr at center
    mc "Did you time your entry with the music and the lights Chef?"
-   cr "{cps=18}{i}What music?{/i}{/cps}"
+   hide cr
+   show cr2 at center
+   cr2 "{i}What music?{/i}"
    mc "The music blaring over the kitchen speakers, Chef."
-   cr "{cps=18}{i}Oh, aha, how quaint, I didn't even notice such an alluring melody had begun to play.{/i}{/cps}"
+   cr2 "{i}Oh, aha, how quaint, I didn't even notice such an alluring melody had begun to play.{/i}"
    mc "Of course you didn't Chef."
    stop music
+   hide cr2
+   show cr
 
    cr "*Ahem*"
    play music chefambience fadein 1.5 volume 0.5
    cr "A customer?"
    cr "Are you sure it's not another youtuber thinking this place is haunted?"
    mc "I'm very sure Chef, she's an... eccentric young woman."
-   cr "{cps=18}{i}A young woman you say?..{/i}{/cps}"
-   cr "{cps=18}{i}My oh my.. I better go introduce myself..{/i}{/cps}"
+   hide cr
+   show cr2
+   cr2 "{i}A young woman you say?..{/i}"
+   show cr at center
+   hide cr2
+   cr2 "{i}My oh my.. I better go introduce myself..{/i}"
    play sound running volume 0.5
    show cr at running, leftoffscreen
    with MoveTransition(2.0)
@@ -52,10 +60,10 @@ label act2:
    with MoveTransition(1.0)
    show cr at center
    mc "Remember what happened last time?"
-   cr "What do you mean?"
+   cr "What could you possibly be referring to?"
    mc "You stole a good customers' girlfriend from him on the spot."
    cr "Oh.. how forgetful I can be. She deserved someone better anyways."
-   mc "How could you possibly know that, we had just catered to them for not even a good 10 minutes."
+   mc "How could you possibly know that? We only catered to them for not even a good 10 minutes."
    cr "When you've spent enough time around women as I have [playerName], you'll know."
    mc "That doesn't even make sens-, anyways that's besides the point. She is a real customer, human as far as I can tell and I know she is starving."
    mc "We haven't had business in forever, this is important for us to keep this place running."
@@ -71,7 +79,7 @@ label act2:
    show cr at walking:
       linear 0.5 xalign 0.7
    mc "{i}(I wonder how he'd react if he knew, heck, I'm surprised he doesn't know considering he worked as a bodyguard for them for so many years.){/i}"
-   show cr at center:   
+   show cr at walking, center:   
       parallel:
          ease 4.0 zoom 2.8
       parallel:
@@ -79,16 +87,17 @@ label act2:
          linear 0.5 yalign 0.18  #or whatever fit.
    mc "{i}(What did they even make him do?){/i}"
    mc "{i}(I've never met someone so charismatic that they just throw money at him like nothing.)"
-   "{i}You okay there kitten whiskers? You seem a little lost in thought..{/i}"
+   "{i}{font=Tangerine_Bold.ttf}{cps=20}{size=60}You okay there kitten whiskers? You seem a little lost in thought..{/size}{/font}{/cps}{/i}"
+   show bgkitchens with hpunch
    mc "Jesus Chef when did you get so close!"
    hide cr
    show cr:
       xalign 0.5
       yalign 0.5
    show cr at center:
-      ease 0.5
+      ease 1.5
    cr "Just making sure you're alright sugar."
-   mc "Anyways, don't you remember what you told me?"
+   mc "Jesus- anyways, don't you remember what you told me?"
    mc "You wanted to be the greatest chef in the world?"
    mc "This is your chance to prove it!-{nw}"
    play sound phoneringing volume 0.2
@@ -98,20 +107,24 @@ label act2:
    cr "Pardon me sugar, I think that's my phone, would you be a doll and pick it up and put it on speaker for me?"
    play sound iphoneunlock volume 0.5
    mc "*Sigh*, make it quick Chef."
+   hide cr
+   show cr2
 
-   cr "{i}Hey babygirl, is this who I think it is?{/i}"
+   cr2 "{i}Hey babygirl, is this who I think it is?{/i}"
    play sound call1 
    pause 1.0
-   cr "{i}I'd never forget you baby, you know you're important to me.{/i}"
+   cr2 "{i}I'd never forget you baby, you know you're important to me.{/i}"
    play sound call2
    pause 1.0
-   cr "{i}Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love.{/i}"
+   cr2 "{i}Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love.{/i}"
    play sound call3
    pause 2.0
-   cr "{i}You know Daddy's got you kitten.{/i}"
+   cr2 "{i}You know Daddy's got you kitten. Anything you want and it's yours.{/i}"
    play sound call4
    pause 3.0
-   cr "{i}Till we meet again Princess.{/i}"
+   cr2 "{i}Till we meet again Princess. Mwah~♡{/i}"
+   hide cr2
+   show cr
 
    pause 0.5
    mc "{i}(I think I just threw up a little.){/i}"

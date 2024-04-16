@@ -5,6 +5,7 @@
 
 image irritatedAura = "irritatedAura.png"
 image cr = "ChefRizz.png"
+image cr2 = "ChefRizz.png"
 image crNoCallback = "CheffRizz.png"
 image crDark = "CheffRizzDark.png"
 image crAwkward = "ChefRizzAwkward.png"
@@ -34,7 +35,6 @@ default dislikes = ""
 default current_input = "likes"
 
 define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
-define cr2 = Character("Chef Rizz", image="CheffRizz.png")
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 define audio.background = "rizztaurantambience.mp3"
 
@@ -184,6 +184,14 @@ init python:
                 
             elif event == 'end': 
                 renpy.show("cr", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("cr2"):
+        
+            if event == 'begin': 
+                renpy.show("cr2", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("cr2", zorder=0, at_list=[not_speaking])
         
         elif renpy.showing("crAwkward"):
         
@@ -202,6 +210,7 @@ init python:
                 renpy.show("crCooking", zorder=0, at_list=[not_speaking])
 
 define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
+define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback)
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
