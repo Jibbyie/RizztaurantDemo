@@ -3,38 +3,56 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-image irritatedAura = "irritatedAura.png"
+# Chef Rizz drawings
 image cr = "ChefRizz.png"
 image cr2 = "ChefRizz.png"
 image crNoCallback = "CheffRizz.png"
 image crDark = "CheffRizzDark.png"
 image crAwkward = "ChefRizzAwkward.png"
 image crCooking = "ChefRizzCooking.png"
+
+# Daria drawings
 image d = "Daria.png"
 image d2 = "DariaHappy.png"
 image d3 = "DariaAngry.png"
 image dHappy = "DariaHappy.png"
-image dAngry = "DariaAngry.png"
-image dSparkle = "DariaSparkle.png"
-image Sparkle = "Sparkle.png"
+image dFlushed = "DariaFlushed.png"
+image dDetective = "DetectiveDaria.png"
+image dDetectiveGlare = "DetectiveDariaGlare.png"
+image dAngryLarge = "DariaAngryLarge.png"
+image dAngrySmall = "DariaAngrySmall.png"
+image dSweat = "DariaSweat.png"
 image dGlare = "DariaGlare.png"
 image dGlassesShine = "DariaGlassesShine.png"
 image dThinking = "DariaThinking.png"
+
+# Daria's emotions
+image flushed = "Flushed.png"
+image sweat = "Sweat.png"
+image glare = "Glare.png"
+image angrylarge = "AngryLarge.png"
+image angrysmall = "AngrySmall.png"
+image dfb = "DetectiveFedoraBadge.png"
+
+# Misc
 image rizztaurantmenu = "menu.png"
 image halfblack = "#00000088"
 image black = "#00000000"
 
+# Backgrounds
 image bgroom = "bgkitchen.jpg"
-image bgkitchen1 = "bgkitchen1.png"
 image bgkitchen1dark = "bgkitchen1dark.png"
 image doombackground = "doombackground.png"
 
+# Defaults
 default playerName = ""
 default likes = ""
 default dislikes = ""
 default current_input = "likes"
 
+# MC and effects definitions
 define mc = Character("[playerName]", color="#000000", what_slow_cps=30)
+define mcthinking = Character("[playerName]", color="#000000", what_slow_cps=30, what_prefix="{i}", what_suffix="{/i}")
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 define audio.background = "rizztaurantambience.mp3"
 
@@ -67,6 +85,7 @@ screen notepad_screen():
 screen nt_button:
     textbutton "Notepad" action ShowMenu('notepad_screen')
 
+# Transforms
 transform half_size:
     zoom 0.5
 transform speaking:
@@ -120,6 +139,7 @@ transform running:
 transform leftoffscreen:
     xalign -3.0
 
+# Text callbacks for speaking
 init python:
     def daria_callback(event, interact=True, **kwargs):
         if not interact: 
@@ -141,21 +161,61 @@ init python:
             elif event == 'end': 
                 renpy.show("dHappy", zorder=0, at_list=[not_speaking])
 
-        elif renpy.showing("dAngry"):
+        elif renpy.showing("dFlushed"):
         
             if event == 'begin': 
-                renpy.show("dAngry", zorder=10, at_list=[speaking])
+                renpy.show("dFlushed", zorder=10, at_list=[speaking])
                 
             elif event == 'end': 
-                renpy.show("dAngry", zorder=0, at_list=[not_speaking])
+                renpy.show("dFlushed", zorder=0, at_list=[not_speaking])
 
-        elif renpy.showing("dSparkle"):
+        elif renpy.showing("dDetective"):
         
             if event == 'begin': 
-                renpy.show("dSparkle", zorder=10, at_list=[speaking])
+                renpy.show("dDetective", zorder=10, at_list=[speaking])
                 
             elif event == 'end': 
-                renpy.show("dSparkle", zorder=0, at_list=[not_speaking])
+                renpy.show("dDetective", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dDetectiveGlare"):
+        
+            if event == 'begin': 
+                renpy.show("dDetectiveGlare", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dDetectiveGlare", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dAngryLarge"):
+        
+            if event == 'begin': 
+                renpy.show("dAngryLarge", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dAngryLarge", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dAngrySmall"):
+        
+            if event == 'begin': 
+                renpy.show("dAngrySmall", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dAngrySmall", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dThinking"):
+        
+            if event == 'begin': 
+                renpy.show("dThinking", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dThinking", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dSweat"):
+        
+            if event == 'begin': 
+                renpy.show("dSweat", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dSweat", zorder=0, at_list=[not_speaking])
 
         elif renpy.showing("dGlare"):
         
@@ -210,13 +270,18 @@ init python:
                 renpy.show("crCooking", zorder=0, at_list=[not_speaking])
 
 define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
-define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback)
+define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
 define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
 define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
 define dHappy = Character("HiraganaLover95", image="DariaHappy.png", callback=daria_callback)
-define dAngry = Character("HiraganaLover95", image="DariaAngry.png", callback=daria_callback)
-define dSparkle = Character("HiraganaLover95", image="DariaSparkle.png", callback=daria_callback)
+define dThinking = Character("HiraganaLover95", image="DariaThinking.png", callback=daria_callback)
+define dFlushed = Character("HiraganaLover95", image="DariaFlushed.png", callback=daria_callback)
+define dDetective = Character("HiraganaLover95", image="DetectiveDaria.png", callback=daria_callback)
+define dDetectiveGlare = Character("HiraganaLover95", image="DetectiveDariaGlare.png", callback=daria_callback)
+define dAngryLarge = Character("HiraganaLover95", image="DariaAngryLarge.png", callback=daria_callback)
+define dAngrySmall = Character("HiraganaLover95", image="DariaAngrySmall.png", callback=daria_callback)
+define dSweat = Character("HiraganaLover95", image="DariaSweat.png", callback=daria_callback)
 define dGlare = Character("HiraganaLover95", image="DariaGlare.png", callback=daria_callback)
 define dGlassesShine = Character("HiraganaLover95", image="DariaGlassesShine.png", callback=daria_callback)
 

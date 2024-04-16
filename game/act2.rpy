@@ -10,30 +10,31 @@ label act2:
    show crDark:
       xalign 2.0
 
+   #Chef's intro
    mc "Chef! We've got a customer!"
    mc "Chef??"
    mc "{i}Where are those damned lights..{/i}"
    play sound chefdoor volume 0.2
-   $ renpy.pause(7.2)
-   "{cps=10}{i}A customer you say?...{/i}{/cps}"
+   $ renpy.pause(7.2, hard=True)
+   "{cps=20}{i}{font=Tangerine_Bold.ttf}{size=60}A customer you say?...{/font}{/size}{/i}{/cps}"
 
-   play music cheffintromusic volume 1.0 fadein 0.5
-
+   play music cheffintromusic if_changed volume 1.0 fadein 0.5
    show crDark at center
    with MoveTransition(11.0)
-
    scene bgkitchens 
    show crNoCallback at center
    with flashbulb
-   cr2 "{i}How can I be of service?{/i}"
+   cr2 "How can I be of service?"
    hide crNoCallback
+   
+   # Chef introduced
    show cr at center
    mc "Did you time your entry with the music and the lights Chef?"
    hide cr
    show cr2 at center
-   cr2 "{i}What music?{/i}"
+   cr2 "What music?"
    mc "The music blaring over the kitchen speakers, Chef."
-   cr2 "{i}Oh, aha, how quaint, I didn't even notice such an alluring melody had begun to play.{/i}"
+   cr2 "Oh, aha, how quaint, I didn't even notice such an alluring melody had begun to play."
    mc "Of course you didn't Chef."
    stop music
    hide cr2
@@ -46,10 +47,10 @@ label act2:
    mc "I'm very sure Chef, she's an... eccentric young woman."
    hide cr
    show cr2
-   cr2 "{i}A young woman you say?..{/i}"
+   cr2 "A young woman you say?.."
    show cr at center
    hide cr2
-   cr2 "{i}My oh my.. I better go introduce myself..{/i}"
+   cr2 "My oh my.. I better go introduce myself.."
    play sound running volume 0.5
    show cr at running, leftoffscreen
    with MoveTransition(2.0)
@@ -102,7 +103,7 @@ label act2:
    mc "This is your chance to prove it!-{nw}"
    play sound phoneringing volume 0.2
    show bgkitchens with vpunch
-   pause 3.0
+   $ renpy.pause(3.0, hard=True)
    
    cr "Pardon me sugar, I think that's my phone, would you be a doll and pick it up and put it on speaker for me?"
    play sound iphoneunlock volume 0.5
@@ -110,24 +111,24 @@ label act2:
    hide cr
    show cr2
 
-   cr2 "{i}Hey babygirl, is this who I think it is?{/i}"
+   cr2 "Hey babygirl, is this who I think it is?"
    play sound call1 
-   pause 1.0
-   cr2 "{i}I'd never forget you baby, you know you're important to me.{/i}"
+   $ renpy.pause(1.0, hard=True)
+   cr2 "I'd never forget you baby, you know you're important to me."
    play sound call2
-   pause 1.0
-   cr2 "{i}Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love.{/i}"
+   $ renpy.pause(1.0, hard=True)
+   cr2 "Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love."
    play sound call3
-   pause 2.0
-   cr2 "{i}You know Daddy's got you kitten. Anything you want and it's yours.{/i}"
+   $ renpy.pause(2.0, hard=True)
+   cr2 "You know Daddy's got you kitten. Anything you want and it's yours."
    play sound call4
-   pause 3.0
-   cr2 "{i}Till we meet again Princess. Mwah~♡{/i}"
+   $ renpy.pause(3.0, hard=True)
+   cr2 "Till we meet again Princess. Mwah~♡"
    hide cr2
    show cr
 
-   pause 0.5
-   mc "{i}(I think I just threw up a little.){/i}"
+   pause 1.5
+   mcthinking "(I think I just threw up a little.)"
    
 
    # show cr at center behind Sparkle

@@ -18,7 +18,7 @@ label act1:
     play music dooropening volume 0.2 fadein 0.1
     play sound shopbelldoor fadein 0.1
     show bgkitchen with vpunch
-    $renpy.pause(4.5)
+    $ renpy.pause(4.5, hard=True)
     play music heartbeat1 volume 0.75 fadein 1.0
     mc "{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}"
 
@@ -49,6 +49,7 @@ label act1:
             jump main_core_loop
 
     label response_in_japanese:
+        $ renpy.fix_rollback()
         stop music
         "{cps=50}P-p-pardon me?{/cps}"
         mc "I'm sorry, you speak Japanese don't you?"
@@ -65,7 +66,7 @@ label act1:
     d "You may address my humble self as my Reddit pseudonym - HiraganaLover95."
     hide d
     show dGlare at center
-    play sound shing
+    play sound shing volume 0.5 if_changed
     show bgkitchen with flashbulb
     if initialResponse == "English":
         d "{i} Yoroshiku Onegaishimasu!{/i}"
@@ -119,7 +120,7 @@ label act1:
     mc "{i}..........................................................................................................................................{/i}"
 
     play sound brightidea
-    $ renpy.pause(1.5)
+    $ renpy.pause(1.5, hard=True)
     mc "{i}(I've got it!){/i}"
     mc "{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}"
     mc "{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}"
@@ -127,7 +128,7 @@ label act1:
     # Intermission, MC introduces main idea (core gameplay loop)
     window hide
     show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
-    $ renpy.pause(3)
+    $ renpy.pause(3, hard=True)
     hide text
     mc "{i}(Hmm, what if...){/i}" with Dissolve(1)
     mc "{i}(Ah, I've got an idea!){/i}"
@@ -154,7 +155,7 @@ label act1:
 
     # Daria Stomach growl
     play sound stomachgrowl
-    $ renpy.pause(3.2)
+    $ renpy.pause(3.2, hard=True)
     mc "{cps=10}Oh, uh, miss are you alrigh-{nw}"
     d "{cps=5}I apologise for my impatience, but I am in dire need of sustenance."
 
@@ -163,17 +164,17 @@ label act1:
         "Show her the menu":
             $ ideaOrMenu = "menuShown"
             mc "Here's our.. menu. Please take a look and let me know if you have any questions."
-            jump backtodSparkle
+            jump backtodGlare
         "Present your fabulous idea":
             $ ideaOrMenu = "ideaPresented"
             mc "We actually have a rather special offering today."
-            jump backtodSparkle
+            jump backtodGlare
 
-    label backtodSparkle:
+    label backtodGlare:
         hide dThinking
         hide doombackground
         show bgkitchen
-        show dSparkle at center
+        show dGlare at center
         play music dariamainbgm volume 0.5
         if ideaOrMenu == "menuShown":
             jump showing_menu
@@ -182,7 +183,7 @@ label act1:
 
     label showing_menu:
         d "Oh?"
-        hide dSparkle
+        hide dGlare
         show d at center
         d "Allow me to take a gander."
         play sound paperflip
@@ -202,7 +203,7 @@ label act1:
         jump presenting_idea
 
     label presenting_idea:
-        hide dSparkle
+        hide dGlare
         show d at center
         d "{i}Hmmmmm..?{/i}"
         hide d
@@ -215,6 +216,9 @@ label act1:
     hide dGlare
     show d at center
     mc "{i}(She really needs to stop doing that..){/i}"
+    show dfb with Dissolve(2.0)
+    hide d
+    show dDetective
     mc "It's a chance to have a meal tailored precisely to your tastes."
     mc "Our Michelin-starred chef will personally craft your culinary desires into reality."
     mc "It's a symphony of flavours, a melody of imagination!"
@@ -276,7 +280,7 @@ label act1:
     window hide
     hide d with Dissolve(1.0)
     show text "{color=#FFFF00}{size=+30}{b}One Eternity Later{/b}{/color}" with Dissolve(1.5)
-    $ renpy.pause(10)
+    $ renpy.pause(5, hard=True)
     hide text
 
     show d with Dissolve(0.5)
