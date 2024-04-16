@@ -58,6 +58,7 @@ default playerName = ""
 default likes = ""
 default dislikes = ""
 default current_input = "likes"
+default show_quick_menu = True
 
 # MC and effects definitions
 define mc = Character("[playerName]", color="#000000", what_slow_cps=30)

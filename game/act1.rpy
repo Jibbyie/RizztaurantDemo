@@ -1,4 +1,5 @@
 label act1:
+    $ quick_menu = False
     show black
     scene black
     stop music fadeout 2.0
@@ -10,6 +11,7 @@ label act1:
 
     # Introducing MC's distaste for his job
     hide screen nt_button
+    $ quick_menu = True
     "{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts.){/cps}{/i}"
     "{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/cps}{/i}"
     "{cps=30}{i}(I wonder if I should just close up shop and go home.){/cps}{/i}"
@@ -39,18 +41,24 @@ label act1:
 
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
     mc "{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}"
+    $ quick_menu = False
 
     menu respond_in_japanese:
         "Respond in Japanese":
             $ initialResponse = "Japanese"
+            $ renpy.fix_rollback()
+            $ quick_menu = True
             mc "{font=japanese.otf}いらっしゃいませ！{/font}"
             jump response_in_japanese
         "Respond in English":
             $ initialResponse = "English"
+            $ renpy.fix_rollback()
+            $ quick_menu = True
             mc "Welcome to Rizztaurant, how may I help yo-{nw}"
             jump main_core_loop
 
     label response_in_japanese:
+        $ quick_menu = True
         $ renpy.fix_rollback()
         stop music
         hide d
@@ -73,6 +81,7 @@ label act1:
 
     label main_core_loop:
         $ renpy.fix_rollback()
+        $ quick_menu = True
         "{cps=50}Salutations, diligent restaurant employee.{/cps}"
     "{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}"
     "{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}"
@@ -116,11 +125,13 @@ label act1:
     mc "{i}(Just gotta walk back there and then she'll decide what she wants, and I'll go tell the chef, and everything will be okay!){/i}"
 
     mc "{i}Ta-da!{/i}"
+    $ quick_menu = False
     window hide 
     # Menu appears on screen
     show rizztaurantmenu at center 
     play sound paperflip
     pause 30.0
+    $ quick_menu = True
 
     mc "{i}(Oh who am I kidding, she's not going to want to eat any of this garbage..){/i}"
     play sound paperdown
@@ -132,16 +143,20 @@ label act1:
     mc "{i}.................................................{/i}"
     mc "{i}..........................................................................................................................................{/i}"
 
+    $ quick_menu = False
     play sound brightidea
     $ renpy.pause(1.5, hard=True)
+    $ quick_menu = True
     mc "{i}(I've got it!){/i}"
     mc "{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}"
     mc "{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}"
 
     # Intermission, MC introduces main idea (core gameplay loop)
     window hide
+    $ quick_menu = False
     show text "{color=#FFFF00}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
     $ renpy.pause(3, hard=True)
+    $ quick_menu = True
     hide text
     mc "{i}(Hmm, what if...){/i}" with Dissolve(1)
     mc "{i}(Ah, I've got an idea!){/i}"
@@ -156,10 +171,12 @@ label act1:
     mc "{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}"
     mc "{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavours, a melody of imagination!){/i}"
     mc "{i}(Yep, I'm screwed.){/i}"
-    
+    $ quick_menu = False
+
     # MC returns to Daria to introduce main idea
     play sound walking
     stop music fadeout 1.0
+
 
     scene doombackground
     show dThinking at center 
@@ -169,17 +186,23 @@ label act1:
     # Daria Stomach growl
     play sound stomachgrowl
     $ renpy.pause(3.2, hard=True)
+    $ quick_menu = True
     mc "{cps=10}Oh, uh, miss are you alrigh-{nw}"
     d "{cps=5}I apologise for my impatience, but I am in dire need of sustenance."
 
     mc "My sincere apologies for the wait!"
+    $ quick_menu = False
     menu:
         "Show her the menu":
             $ ideaOrMenu = "menuShown"
+            $ renpy.fix_rollback()
+            $ quick_menu = True
             mc "Here's our.. menu. Please take a look and let me know if you have any questions."
             jump backtodGlare
         "Present your fabulous idea":
             $ ideaOrMenu = "ideaPresented"
+            $ renpy.fix_rollback()
+            $ quick_menu = True
             mc "We actually have a rather special offering today."
             jump backtodGlare
 
@@ -288,6 +311,7 @@ label act1:
     d "After all, I wish to provide the chef with the utmost clarity."
     mc "Take your time, I'll be here when you're ready."
     mc "{i}(You could speed it up just a tad bit though..){/i}"
+    $ quick_menu = False
 
     window hide
     hide d with Dissolve(1.0)
@@ -296,9 +320,12 @@ label act1:
     hide text
 
     show d with Dissolve(0.5)
+    $ quick_menu = True
     d "I have concluded my deliberation."
 
+    $ quick_menu = False
     hide d with Dissolve(0.5)
+    $ quick_menu = True
     stop music fadeout 0.5
     "HiraganaLover95 will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!"
     "You'll need to jot down her likes and dislikes in your notebook. You can access it by clicking the Notepad button at the top left of the screen once she is done talking."
@@ -308,12 +335,14 @@ label act1:
     play sound "READY.mp3"
     "Ready?"
 
+    $ quick_menu = False
     menu:
         "READY!":
             jump ready
     
     label ready:
         play sound "GO.mp3"
+        $ quick_menu = True
         "Good luck!"
 
     hide d
@@ -332,6 +361,7 @@ label act1:
     d "{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}"
     d "{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}"
     d "{cps=58}{nw}The sharp tanginess of goat cheese, combined with its distinct aroma, is enough to make me question the sanity of its creators.{/cps}"
+    $ quick_menu = False
     hide d2
     hide d3
     show d at center
@@ -339,6 +369,7 @@ label act1:
     pause 1.0
 
     play music dariamainbgm volume 0.5 fadein 0.5
+    $ quick_menu = True
     d "I hope this is sufficient for the chef to work with."
 
     mc "Wh- Uhh-, yeah! That's perfect!... I think."
@@ -350,5 +381,6 @@ label act1:
     show screen nt_button
     mc "{i}(I'll need to remember this for when I tell Chef Rizz.){/i}"
     mc "I'll go tell the chef right away!"
+    $ quick_menu = False
 
     call act2
