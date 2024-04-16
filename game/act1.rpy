@@ -18,12 +18,15 @@ label act1:
     mc "{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}"
     
     # New customer comes into the scene
+    window hide
+    $ quick_menu = False
     stop music fadeout 0.5
     play music dooropening volume 0.2 fadein 0.1
     play sound shopbelldoor fadein 0.1
     show bgkitchen with vpunch
     $ renpy.pause(4.5, hard=True)
     play music heartbeat1 volume 0.75 fadein 1.0
+    $ quick_menu = True
     mc "{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}"
 
     play sound walking
@@ -31,12 +34,14 @@ label act1:
     play sound walking
     mc "{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the last time we had one.){/i}"
     mc "{i}Ever since that incident with Chef Rizz and that guy's girlfriend I-{/i}{nw}"
+    $ quick_menu = False
     
     # Daria(HiraganaLover95) introduction
     show bgkitchen with hpunch
     stop music
     show d at center with easeinright
     play music dariamainbgm volume 0.5 fadein 1.0 
+    $ quick_menu = True
     "{cps=50}Konnichiwa. Does this establishment currently harbour any occupants?{/cps}"
 
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
@@ -86,13 +91,16 @@ label act1:
     "{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}"
     "{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}"
     d "You may address my humble self as my Reddit pseudonym - HiraganaLover95."
+    $ quick_menu = False
     hide d
     show dGlare at center
     play sound shing volume 0.5 if_changed
     show bgkitchen with flashbulb
     if initialResponse == "English":
+        $ quick_menu = True
         d "{i} Yoroshiku Onegaishimasu!{/i}"
     if initialResponse == "Japanese":
+        $ quick_menu = True
         d "{i} Nice to meet you!{/i}"
     hide dGlare
     show d at center
