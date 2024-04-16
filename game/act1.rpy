@@ -180,14 +180,15 @@ label act1:
     mc "{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavours, a melody of imagination!){/i}"
     mc "{i}(Yep, I'm screwed.){/i}"
     $ quick_menu = False
+    hide dThinking
 
     # MC returns to Daria to introduce main idea
     play sound walking
     stop music fadeout 1.0
 
-
     scene doombackground
     show dThinking at center 
+    show daria angry zorder 1000
     show halfblack
     with Dissolve(4.0)
 
@@ -217,6 +218,7 @@ label act1:
     label backtodGlare:
         hide dThinking
         hide doombackground
+        hide daria angry
         show bgkitchen
         show dGlare at center
         play music dariamainbgm volume 0.5
@@ -229,6 +231,7 @@ label act1:
         $ renpy.fix_rollback()
         d "Oh?"
         hide dGlare
+        hide daria angry
         show d at center
         d "Allow me to take a gander."
         play sound paperflip
