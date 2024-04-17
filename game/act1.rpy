@@ -117,14 +117,18 @@ label act1:
         # Over 1.0 seconds move to focus on the cropped area and rescale up to size
         linear 1.0 crop (510, 290, 160, 90) size (1920, 1080) # Flies
         pause 1.0
-        linear 0.5 crop (80, 630, 200, 130) size (1920, 1080) # Cobwebs
+        linear 0.5 crop (50, 630, 200, 130) size (1920, 1080) # Cobwebs
         pause 1.0
         linear 0.5 crop (30, 270, 160, 90) size (1920, 1080) # Cockroach
         pause 1.0
+        linear 0.5 crop (1410, 600, 220, 150) size (1920, 1080) # Silverfish
+        pause 1.0
         linear 0.5 crop (935, 610, 160, 90) size (1920, 1080) # Rat
-    
+        pause 1.0
+        linear 0.5 crop (280, 670, 220, 150) size (1920, 1080) # Chalk outline
+ 
     window hide
-    $ renpy.pause(6.5, hard = True)
+    $ renpy.pause(9.4, hard = True)
     $ quick_menu = True
     mc "Uhm.."
 
