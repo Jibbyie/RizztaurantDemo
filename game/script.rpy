@@ -83,7 +83,6 @@ define mcthinking = Character("[playerName]", what_slow_cps=30, what_prefix="{i}
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 define audio.background = "rizztaurantambience.mp3"
 
-
 # Notebook Screen
 screen notepad_screen():
     frame:

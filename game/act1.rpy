@@ -79,7 +79,6 @@ label act1:
         "{cps=50}Ahem.{/cps}"
         hide sweat
         hide flushed
-        with Dissolve(0.1)
         hide dThinking
         show d
         play music dariamainbgm volume 0.5
@@ -106,7 +105,37 @@ label act1:
     show d at center
     d "Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?"
 
-    mc "Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up."
+    mc "Oh, no, not at all! I was just uh...."
+    hide d
+    window auto
+    
+    $ quick_menu = False
+    show bgkitchen:
+        # Start at full image
+        crop (0,0, 1920, 1080) size (1920, 1080)
+        subpixel True
+        # Over 1.0 seconds move to focus on the cropped area and rescale up to size
+        linear 1.0 crop (510, 290, 160, 90) size (1920, 1080) # Flies
+        pause 1.0
+        linear 0.5 crop (80, 630, 200, 130) size (1920, 1080) # Cobwebs
+        pause 1.0
+        linear 0.5 crop (30, 270, 160, 90) size (1920, 1080) # Cockroach
+        pause 1.0
+        linear 0.5 crop (935, 610, 160, 90) size (1920, 1080) # Rat
+    
+    window hide
+    $ renpy.pause(6.5, hard = True)
+    $ quick_menu = True
+    mc "Uhm.."
+
+    show bgkitchen:
+        crop (0,0, 1920, 1080) size (1920, 1080)
+        subpixel True
+        crop (0,0, 1920, 1080) size (1920, 1080)
+    show d
+    mc "Cleaning up! Yeah.. cleaning up."
+    #$ quick_menu = True
+
     mc "{i}(That was a bit weird...){/i}"
     mc "{i}(Wait what.. a Reddit pseudonym? I-I don't think I should even question that..)"
     play sound chairpullout
