@@ -70,6 +70,14 @@ image daria glasses shine:
     pause 0.5 
     repeat
 
+image chef wink:
+    "ChefRizz.png"
+    pause 0.2
+    "ChefRizzEyeClosed.png"
+    pause 0.4
+    "ChefRizz.png"
+
+
 # Defaults
 default playerName = ""
 default likes = ""

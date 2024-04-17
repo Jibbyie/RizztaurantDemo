@@ -112,8 +112,12 @@ label act2:
       yalign 0.5
    show cr at center:
       ease 1.5
+   hide cr
+   show chef wink
    cr "Just making sure you're alright sugar."
    mc "Jesus- anyways, don't you remember what you told me?"
+   hide chef wink
+   show cr
    mc "You wanted to be the greatest chef in the world?"
    mc "This is your chance to prove it!-{nw}"
    $ quick_menu = False
