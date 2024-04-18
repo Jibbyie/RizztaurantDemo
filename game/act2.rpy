@@ -119,7 +119,7 @@ label act2:
    hide chef wink
    show cr
    mc "You wanted to be the greatest chef in the world?"
-   mc "This is your chance to prove it!-{nw}"
+   mc "This is your chance to prove it!-"
    $ quick_menu = False
    play sound phoneringing volume 0.2
    show bgkitchens with vpunch
@@ -156,7 +156,7 @@ label act2:
    hide cr2
    show cr
 
-   mcthinking "(I think I just threw up a little.)"
+   mcthinking "I think I just threw up a little."
    
 
    # show cr at center behind Sparkle

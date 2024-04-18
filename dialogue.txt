@@ -1,64 +1,67 @@
-Please choose a different name, not one that is already an NPC!
-{cps=30}{i}(Another quiet day at work. Feels like I'm serving ghosts more than customers.){/cps}{/i}
-{cps=30}{i}(Serving imaginary friends might be easier than these empty seats. And less lonely.){/cps}{/i}
-{cps=30}{i}(I wonder if I should just close up shop and go home. Seriously, it's like I'm the only one who cares about these tables.){/cps}{/i}
-{i}([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.){/i}
-{i}(Wait... wh-what? What was that? Am I hearing things?!){/i}
-{i}(I think I hear footsteps... Wait, do I? Is it just my imagination?){/i}
-{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the la-){/i}{nw}
-{cps=50}Konnichiwa. Does this establishment currently harbor any occupants?{/cps}
-{i}(Oh my god, it's a real person! I'm not crazy!){/i}
-{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}
-{font=japanese.otf}いらっしゃいませ！{/font}
-Welcome to Rizztaurant, how may I help yo-{nw}
-{cps=50}P-p-pardon me?{/cps}
+(Another quiet day at work. Feels like I'm serving ghosts.)
+(Serving imaginary friends might be easier than these empty seats. And less lonely.)
+(I wonder if I should just close up shop and go home.)
+([playerName], the expert in serving.. invisible customers. If only they left invisible tips, right? Who am I kidding, at this rate, I'd be happy to see a ghost show up and ask for water.)
+(Wait... wh-what? What was that? Am I hearing things?!)
+(I think I hear footsteps... Wait, do I? Is it just my imagination?)
+(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the last time we had one.)
+Ever since that incident with Chef Rizz and that guy's girlfriend I-
+Konnichiwa. Does this establishment currently harbour any occupants?
+(Oh my god, it's a real person! I'm not crazy!)
+(Stick to the script, stick to the script.. y-you know what to do man!)
+いらっしゃいませ！
+Welcome to Rizztaurant, how may I help yo-
+P-p-pardon me?
 I'm sorry, you speak Japanese don't you?
-{cps=50}I uh, uh-{/cps}
-{cps=50}Yes, mochiron, you just, caught me off guard... sumimasen..{/cps}
-{cps=50}I'm sorry, I'm just... simply, uh.. not used to being greeted in the language of the homeland. That is all. Yes of course.{/cps}
-{cps=50}Ahem.{/cps}
-{cps=50}Salutations, diligent restaurant employee.{/cps}
-{cps=50}I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.{/cps}
-{cps=50}Upon observation, your establishment's signage beckoned to me from the exterior.{/cps}
-You may address my humble self as Daria.
-{i} Yoroshiku Onegaishimasu!{/i}
-{i} Nice to meet you!{/i}
+I uh, uh-
+Yes, mochiron, you just, caught me off guard... sumimasen..
+I'm sorry, I'm just... simply, uh.. not used to being greeted in the language of the homeland. That is all. Yes of course.
+Ahem.
+Salutations, diligent restaurant employee.
+I extend my sincere apologies if my unexpected entrance caused you disarray. My intent was merely to locate an establishment to appease the incessant demands of my ever-expansive hunger.
+Upon observation, your establishment's signage beckoned to me from the exterior.
+You may address my humble self as my Reddit pseudonym - HiraganaLover95.
+ Yoroshiku Onegaishimasu!
+ Nice to meet you!
 Pray, reassure me, have I unwittingly intruded upon an ongoing engagement?
-Oh, no, not at all! I was just.. cleaning up. Yeah, cleaning up.
-{i}(That was a bit weird..){/i}
+Oh, no, not at all! I was just uh....
+Uhm..
+Cleaning up! Yeah.. cleaning up.
+(That was a bit weird...)
+(Wait what.. a Reddit pseudonym? I-I don't think I should even question that..)
 I'm [playerName]. I'll be your waiter today. May you please take a seat just infront of me here?
 Indubitably. I shall engage without reservation.
 Perchance, [playerName], would you be so kind as to elucidate upon the culinary highlights of this fine establishment?
 Oh, uh, sure!
 Let me just go get a menu for you really quick!
-{i}(I can't believe it! A real customer!){/i}
-{i}(Alright, stay calm, stay calm. It's just a menu.){/i}
-{i}(All I've got to do is bring it back. Like nothing's unusual.){/i}
-{i}(Just gotta walk back there and then she'll decide what she wants, and I'll go tell the chef, and everything will be okay!){/i}
-{i}Ta-da!{/i}
-{i}(Oh who am I kidding, she's not going to want to eat any of this garbage..){/i}
-{i}(Think man think, we can't let this opportunity go to waste.){/i}
-{i}....{/i}
-{i}.......{/i}
-{i}..................{/i}
-{i}.................................................{/i}
-{i}..........................................................................................................................................{/i}
-{i}(I've got it!){/i}
-{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}
-{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}
-{i}(Hmm, what if...){/i}
-{i}(Ah, I've got an idea!){/i}
-{i}(Why not offer something unique? Something that'll grab her attention. Like...){/i}
-{i}(I'll ask her if she's up for a culinary adventure. You know, something different from the usual fare.){/i}
-{i}(A chance to savor the unexpected. After all, who wants predictable when you can have... surprise?){/i}
-{i}(Yeah, that sounds good!){/i}
-{i}(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.'){/i}
-{i}(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.){/i}
-{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}
-{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavors, a melody of imagination!){/i}
-{i}(Yep, I'm screwed.){/i}
-{cps=10}Oh, uh, miss are you alrigh-{nw}
-{cps=5}I apologize for my impatience, but I am in dire need of sustenance.
+(I can't believe it! A real customer!)
+(Alright, stay calm, stay calm. It's just a menu.)
+(All I've got to do is bring it back. Like nothing's unusual.)
+(Just gotta walk back there and then she'll decide what she wants, and I'll go tell the chef, and everything will be okay!)
+Ta-da!
+(Oh who am I kidding, she's not going to want to eat any of this garbage..)
+(Think man think, we can't let this opportunity go to waste.)
+....
+.......
+..................
+.................................................
+..........................................................................................................................................
+(I've got it!)
+(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!)
+(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?)
+(Hmm, what if...)
+(Ah, I've got an idea!)
+(Why not offer something unique? Something that'll grab her attention. Like...)
+(I'll ask her if she's up for a culinary adventure. You know, something different from the usual fare.)
+(A chance to savour the unexpected. After all, who wants predictable when you can have... surprise?)
+(Yeah, that sounds good!)
+(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.')
+(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.)
+(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!')
+(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavours, a melody of imagination!)
+(Yep, I'm screwed.)
+Oh, uh, miss are you alrigh-
+I apologise for my impatience, but I am in dire need of sustenance.
 My sincere apologies for the wait!
 Here's our.. menu. Please take a look and let me know if you have any questions.
 We actually have a rather special offering today.
@@ -68,88 +71,124 @@ Hm.
 I see.
 You know, these choices are... quite unusual. Is this some sort of avant-garde selection?
 I must say, I wasn't expecting such.. creativity in the realm of taste combinations.
-But alas, I regret to inform you these.. {i}meals,{/i} presented here are not to my liking.
+But alas, I regret to inform you these.. meals, presented here are not to my liking.
 I am most apologetic.
-Thank you for your courteous hospitality. I shall be taking my leav-.{nw}
+Thank you for your courteous hospitality. But i'm going to have to-.
 Wait!
 Pardon me?
 I mean, uh, I'm sorry to hear that.
 But, uh, we have a rather special offering today.
-{i}Hmmmmm..?{/i}
-{b}Sugoi!{/b} Do tell.
+Hmmmmm..?
+Sugoi! Do tell.
 I am most intrigued.
-{i}(She really needs to stop doing that..){/i}
+(She really needs to stop doing that..)
 It's a chance to have a meal tailored precisely to your tastes.
 Our Michelin-starred chef will personally craft your culinary desires into reality.
-It's a symphony of flavors, a melody of imagination!
+It's a symphony of flavours, a melody of imagination!
 Miss, it's only available for a limited time, you should act now before it's too late!
-{i}(I am so totally screwed){/i}
+(I am so totally screwed.)
 Oh-ho-ho-ho-ho-ho.
 You have quite the way with words fine gentleman. I am most impressed.
 To think of a culinary adventure tailored to my own preferences, it's positively thrilling!
-The prospect of this Michelin-starred chef weaving a symphony of flavors for my palate fills me with delight.
+The prospect of this Michelin-starred chef weaving a symphony of flavours for my palate fills me with delight.
 And only for a limited time? How could I possibly resist?
 I wholeheartedly embrace this opportunity!
-{i}(Wait, what?){/i}
-{i}(She actually wants to try it?){/i}
-{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}
+(Wait, what?)
+(She actually wants to try it?)
+(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...)
 I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations.
 But don't worry, it's bound to be an unforgettable experience in its own right.
-Oh, how marvelous it sounds! An opportunity to tantalize my taste buds and embrace the unexpected.
-The very notion of a chef's unique approach intrigues me even further. After all, artistry often emerges from the unexpected.
-Fear not, kind sir, for I am prepared to embark on this culinary adventure with an open heart and an adventurous spirit.
+Oh, how marvelous it sounds! An opportunity to tantalise my taste buds.
+After all, artistry often emerges from the unexpected.
+Fear not, kind sir, for I am prepared to embark with an open heart and an adventurous spirit.
 Uh, sure!
-{i}(Wow, she's really into this huh...){/i}
-Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself.
-{i}(I hope you know what you're getting into, Daria...){/i}
-Oh but of course, I live for the suspense.
-I shall await the chef's creation with bated breath.
+(Wow, she's really into this huh...)
+Just... be prepared for.. something unique, alright? Chef Rizz has a knack for surprising even myself.
+(I hope you know what you're getting into...)
+Oh-ho-ho-ho but of course! I live for the suspense!
 Apprise, how do we commence such an immense undertaking?
 Um, well, let me know when you're ready and I'll explain the process.
 I am prepared to begin at your behest.
-O-okay.. {i}(what the heck does behest mean?){/i}
-So, first, you'll need to tell me what you would like to eat and what you dislike.
-Then I'll relay it to the chef.
+O-okay.. (what the heck does behest mean?)
+So, first, I will ask you four culinary related questions.
+Each one of them will determine certain aspects of your meal.
 You can be as specific or as vague as you want.
-The chef will do his best to create something that closely matches your requests.
-The sky's the limit, as long as what you propose is within reason {i}(and our budget hopefully..){/i}.
+Then I'll relay it to the chef.
+The chef will do his best to create something that closely matches your answers.
+The sky's the limit, as long as what you propose is within reason.
 I see, I see.
-I shall endeavor to be as specific as possible.
+I shall endeavour to be as specific as possible.
 How delightful! I am most eager to begin.
 Alright, let's get started then!
-So, what are your preferences?
-Hmmmm....
-I shall require a moment to deliberate.
-After all, I wish to provide the chef with the utmost clarity.
-Take your time, I'll be here when you're ready.
-{i}(You could speed it up just a tad bit though..){/i}
-I have concluded my deliberation.
-Daria will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!
-You'll need to jot down her likes and dislikes in your notebook. You can access it by clicking the Notepad button at the top left of the screen once she is done talking.
-Any like or dislike will be {b}bolded{/b} like such when she talks.
-Try not to abuse the History button and do your best to remember what she says!
-Ready?
-Good luck!
-{cps=58}{nw}I am most enamoured with the following: {b}Noodles, cashew nuts, paprika, halloumi cheese{/b}, oh am I indeed very fond of halloumi cheese! With that being said, I am also quite fond of,{/cps}
-{cps=58}{nw}{b}soy beans, soy sauce, garlic, red onion.{/b} I truly believe garlic is the ultimate root vegetable, unrivaled by any other.{/cps}
-{cps=58}{nw}The pungent aroma, the depth of flavor... it simply elevates every dish it graces.{/cps}
-{cps=58}{nw}Ah, but let us not forget the delicate allure of {b}avocado, balsamic vinegar, sun-dried tomatoes, saffron{/b}. Each adds a symphony of flavors to any dish, don't you agree?{/cps}
-{cps=58}{nw}Saffron, in particular, with its golden hue and delicate fragrance, is like a touch of magic in every bite.{/cps}
-{cps=58}{nw}And of course, the exquisite taste of {b}dark chocolate, fresh basil, truffle oil, caramelized onions{/b}. A true culinary delight for the discerning palate.{/cps}
-{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavor experience like no other.{/cps}
-{cps=58}{nw}Now, onto my dislikes: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed{/b}. Each one a lamentable addition to any meal.{/cps}
-{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}
-{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}
-{cps=58}{nw}The sharp tanginess of goat cheese, combined with its distinct aroma, is enough to make me question the sanity of its creators.{/cps}
+So, what are some of your favourite cuisines?
+HiraganaLover95 will now talk about her preferences. As you might have noticed, she's a bit chatty.
+Do your best to memorise her answers and take note of what she loves, likes, dislikes or neutral about.
+This will be important later for when you relay it to the chef.
+Don't worry, there'll be a point where you can write down what you think is best.
+Just a little hint, you can't write down everything!
+Cuisines, oh what a labryinth of sensory experiences they offer!
+If you wish to probe the depths of my culinary inclinations, you may. For I grant you passage.
+You would discern a certain affinity for the comforting embrace of Italian cuisine, its familiar aromas stirring memories long dormant.
+Even so, admist the whispers of marina and basil and hearty carbonara pasta, there lies a subtle intrigue.
+An intrigue in the subtle complexities of Greek cuisine, its delicate balance of flavours a profound enigma to unravel.
+While many may take delight in bold spices and zesty salas, it has yet to capture my palate in the same way.
+You speak Japanese right? Excuse me for prying but what about Japanese food?
+Japanese cuisine once cast its spell upon my palate... though its allure is but a fleeting breeze compared to the gusts of passion to those aforementioned.
+That will conclude my cuisine preferences!
 I hope this is sufficient for the chef to work with.
 Wh- Uhh-, yeah! That's perfect!... I think.
-{i}(What kind of dishes can Chef Rizz make with these ingredients?!){/i}
-{i}(Regardless, I should write this down.){/i}
-{i}(I'll just jot down her likes and dislikes in my notebook.){/i}
-{i}(I'll need to remember this for when I tell Chef Rizz.){/i}
+(What kind of dishes can Chef Rizz make with these ingredients?!)
+(Regardless, I should write this down.)
+(I'll just jot down her likes and dislikes in my notebook.)
+(I'll need to remember this for when I tell Chef Rizz.)
 I'll go tell the chef right away!
 Chef! We've got a customer!
-{i}Where are those damned lights..{/i}
-{cps=10}{i}A customer you say?...{/i}{/cps}
-{cps=15}{i}How can I be of service?{/i}{/cps}
-I love you
+Chef??
+Where are those damned lights..
+A customer you say?...
+How can I be of service?
+Did you time your entry with the music and the lights Chef?
+What music?
+The music blaring over the kitchen speakers, Chef.
+Oh, aha, how quaint, I didn't even notice such an alluring melody had begun to play.
+Of course you didn't Chef.
+*Ahem*
+A customer?
+Are you sure it's not another youtuber thinking this place is haunted?
+I'm very sure Chef, she's an... eccentric young woman.
+A young woman you say?..
+My oh my.. I better go introduce myself..
+Hold your horses there Chef!
+Remember what happened last time?
+What could you possibly be referring to?
+You stole a good customers' girlfriend from him on the spot.
+Oh.. how forgetful I can be. She deserved someone better anyways.
+How could you possibly know that? We only catered to them for not even a good 10 minutes.
+When you've spent enough time around women as I have [playerName], you'll know.
+That doesn't even make sens-, anyways that's besides the point. She is a real customer, human as far as I can tell and I know she is starving.
+We haven't had business in forever, this is important for us to keep this place running.
+Don't even worry about it sweetheart. Daddy's loaded.
+I can keep this place afloat for years to come.
+That's not the point i'm trying to make Chef. Not the finances. We are going to need to maintain the image of a functioning restaurant here.
+We need to keep your.. benefactors happy.
+Oh don't worry sugarplum, my bosses love me.
+(His bosses huh? If only Chef really knew about the people he was working under.)
+(Or the fact this whole restaurant is a money laundering business for a cartel.)
+(I wonder how he'd react if he knew, heck, I'm surprised he doesn't know considering he worked as a bodyguard for them for so many years.)
+(What did they even make him do?)
+(I've never met someone so charismatic that they just throw money at him like nothing.)
+You okay there kitten whiskers? You seem a little lost in thought..
+Jesus Chef when did you get so close!
+Just making sure you're alright sugar.
+Jesus- anyways, don't you remember what you told me?
+You wanted to be the greatest chef in the world?
+This is your chance to prove it!-
+Pardon me sugar, I think that's my phone, would you be a doll and pick it up and put it on speaker for me?
+*Sigh*, make it quick Chef.
+Hey babygirl, is this who I think it is?
+I'd never forget you baby, you know you're important to me.
+Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love.
+You know Daddy's got you kitten. Anything you want and it's yours.
+Till we meet again Princess. Mwah~♡
+I think I just threw up a little.
+Please choose a different name, not one that is already an NPC!

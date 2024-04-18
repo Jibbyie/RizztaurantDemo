@@ -33,7 +33,7 @@ label act1:
     mc "{i}(I think I hear footsteps... Wait, do I? Is it just my imagination?){/i}"
     play sound walking
     mc "{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the last time we had one.){/i}"
-    mc "{i}Ever since that incident with Chef Rizz and that guy's girlfriend I-{/i}{nw}"
+    mc "{i}Ever since that incident with Chef Rizz and that guy's girlfriend I-{/i}"
     $ quick_menu = False
     
     # Daria(HiraganaLover95) introduction
@@ -59,7 +59,7 @@ label act1:
             $ initialResponse = "English"
             $ renpy.fix_rollback()
             $ quick_menu = True
-            mc "Welcome to Rizztaurant, how may I help yo-{nw}"
+            mc "Welcome to Rizztaurant, how may I help yo-"
             jump main_core_loop
 
     label response_in_japanese:
@@ -229,7 +229,7 @@ label act1:
     play sound stomachgrowl
     $ renpy.pause(3.2, hard=True)
     $ quick_menu = True
-    mc "{cps=10}Oh, uh, miss are you alrigh-{nw}"
+    mc "{cps=10}Oh, uh, miss are you alrigh-"
     d "{cps=5}I apologise for my impatience, but I am in dire need of sustenance."
 
     mc "My sincere apologies for the wait!"
@@ -276,7 +276,7 @@ label act1:
         d "I must say, I wasn't expecting such.. creativity in the realm of taste combinations."
         d "But alas, I regret to inform you these.. {i}meals,{/i} presented here are not to my liking."
         d "I am most apologetic."
-        d "Thank you for your courteous hospitality. But i'm going to have to-.{nw}"
+        d "Thank you for your courteous hospitality. But i'm going to have to-."
         mc "Wait!"
         d "Pardon me?"
         mc "I mean, uh, I'm sorry to hear that."
@@ -302,7 +302,7 @@ label act1:
     mc "Our Michelin-starred chef will personally craft your culinary desires into reality."
     mc "It's a symphony of flavours, a melody of imagination!"
     mc "Miss, it's only available for a limited time, you should act now before it's too late!"
-    mc "{i}(I am so totally screwed){/i}"
+    mc "{i}(I am so totally screwed.){/i}"
 
     # Daria accepts the notion of the idea
     hide d
@@ -317,7 +317,7 @@ label act1:
     d "I wholeheartedly embrace this opportunity!"
 
     mc "{i}(Wait, what?){/i}"
-    show daria glasses shine zorder 1000 with Dissolve(0.6)
+    show daria glasses shine zorder 1000
     mc "{i}(She actually wants to try it?){/i}"
     mc "{i}(Wait a minute... This could be more trouble than I thought. Chef Rizz isn't exactly a culinary genius...){/i}"
     mc "I'm truly glad you're enthusiastic! Our chef has a... uh.. unique approach to his creations."
@@ -331,104 +331,86 @@ label act1:
     # MC brings up mention of Chef Rizz
     mc "Uh, sure!"
     mc "{i}(Wow, she's really into this huh...){/i}"
-    mc "Just... be prepared for the unexpected, alright? Chef Rizz has a knack for surprising even myself."
+    mc "Just... be prepared for.. something unique, alright? Chef Rizz has a knack for surprising even myself."
     mc "{i}(I hope you know what you're getting into...){/i}"
 
-    d "Oh but of course, I live for the suspense."
+    hide d
+    show dGlassesShine at running, center 
+    show d at offscreenleft 
+    d "Oh-ho-ho-ho but of course! I live for the suspense!" # d at offscreenleft is a workaround to apply laughing animation during speech
+    hide dGlassesShine
+    hide d 
+    show d at center
     d "Apprise, how do we commence such an immense undertaking?"
     
     mc "Um, well, let me know when you're ready and I'll explain the process."
     d "I am prepared to begin at your behest."
     mc "O-okay.. {i}(what the heck does behest mean?){/i}"
-    mc "So, first, you'll need to tell me what you would like to eat and what you dislike."
-    mc "Then I'll relay it to the chef."
+    mc "So, first, I will ask you four culinary related questions."
+    mc "Each one of them will determine certain aspects of your meal."
     mc "You can be as specific or as vague as you want."
-    mc "The chef will do his best to create something that closely matches your requests."
+    mc "Then I'll relay it to the chef."
+    mc "The chef will do his best to create something that closely matches your answers."
     mc "The sky's the limit, as long as what you propose is within reason."
     d "I see, I see."
     d "I shall endeavour to be as specific as possible."
     d "How delightful! I am most eager to begin."
 
     mc "Alright, let's get started then!"
-    mc "So, what are your preferences?"
+    mc "So, what are some of your favourite cuisines?"
 
-    d "Hmmmm...."
-    d "I shall require a moment to deliberate."
-    d "After all, I wish to provide the chef with the utmost clarity."
-    mc "Take your time, I'll be here when you're ready."
-    mc "{i}(You could speed it up just a tad bit though..){/i}"
-    $ quick_menu = False
+    "HiraganaLover95 will now talk about her preferences. As you might have noticed, she's a bit chatty."
+    "Do your best to memorise her answers and take note of what she loves, likes, dislikes or neutral about."
+    "This will be important later for when you relay it to the chef."
+    "Don't worry, there'll be a point where you can write down what you think is best."
+    "Just a little hint, you can't write down everything!"
 
-    window hide
-    hide d with Dissolve(1.0)
-    show text "{color=#80400B}{size=+30}{b}One Eternity Later{/b}{/color}" with Dissolve(1.5)
-    $ renpy.pause(5, hard=True)
-    hide text
-
-    show d with Dissolve(0.5)
-    $ quick_menu = True
-    d "I have concluded my deliberation."
-
-    $ quick_menu = False
-    hide d with Dissolve(0.5)
-    $ quick_menu = True
-    stop music fadeout 0.5
-    "HiraganaLover95 will now tell you her likes and dislikes. But be wary, she is a very fast talker and there'll be no stopping her once she starts going!"
-    "You'll need to jot down her likes and dislikes in your notebook. You can access it by clicking the Notepad button at the top left of the screen once she is done talking."
-    "Any like or dislike will be {b}bolded{/b} like such when she talks."
-    "Try not to abuse the History button and do your best to remember what she says!"
-
-    play sound "READY.mp3"
-    "Ready?"
-
-    $ quick_menu = False
-    menu:
-        "READY!":
-            jump ready
-    
-    label ready:
-        play sound "GO.mp3"
-        $ quick_menu = True
-        "Good luck!"
-
+    d "Cuisines, oh what a labryinth of sensory experiences they offer!"
+    d "If you wish to probe the depths of my culinary inclinations, you may. For I grant you passage."
     hide d
-    show d2 at bounce, center
-    play music "talkingfastmusic.mp3"
-    d "{cps=58}{nw}I am most enamoured with the following: {b}Noodles, cashew nuts, paprika, halloumi cheese{/b}, oh am I indeed very fond of halloumi cheese! With that being said, I am also quite fond of,{/cps}"
-    d "{cps=58}{nw}{b}soy beans, soy sauce, garlic, red onion.{/b} I truly believe garlic is the ultimate root vegetable, unrivaled by any other.{/cps}"
-    d "{cps=58}{nw}The pungent aroma, the depth of flavour... it simply elevates every dish it graces.{/cps}"
-    d "{cps=58}{nw}Ah, but let us not forget the delicate allure of {b}avocado, balsamic vinegar, sun-dried tomatoes, saffron{/b}. Each adds a symphony of flavours to any dish, don't you agree?{/cps}"
-    d "{cps=58}{nw}Saffron, in particular, with its golden hue and delicate fragrance, is like a touch of magic in every bite.{/cps}"
-    d "{cps=58}{nw}And of course, the exquisite taste of {b}dark chocolate, fresh basil, truffle oil, caramelized onions{/b}. A true culinary delight for the discerning palate.{/cps}"
-    d "{cps=58}{nw}Dark chocolate, with its rich bitterness, paired with the freshness of basil and the earthy essence of truffle oil, creates a flavour experience like no other.{/cps}"
-    hide d2
-    show d3 at shake, center
-    show daria angry
-    d "{cps=58}{nw}Now, onto my dislikes: {b}Oyster sauce, asparagus, melon, green beans, matcha, seaweed{/b}. Each one a lamentable addition to any meal.{/cps}"
-    d "{cps=58}{nw}Matcha, with its overpowering bitterness, and seaweed, with its slimy texture, are particularly offensive to my taste buds.{/cps}"
-    d "{cps=58}{nw}And lastly, I am not particularly fond of the taste of {b}goat cheese{/b}. Why we ever thought to milk a goat, I will never understand.{/cps}"
-    d "{cps=58}{nw}The sharp tanginess of goat cheese, combined with its distinct aroma, is enough to make me question the sanity of its creators.{/cps}"
-    $ quick_menu = False
-    hide d2
-    hide d3
-    hide daria angry
-    show d at center
-    stop music fadeout 0.5
-    pause 1.0
+    show dHappy at center
+    dHappy "You would discern a certain affinity for the comforting embrace of Italian cuisine, its familiar aromas evoking memories long dormant."
+    hide dHappy
+    show dThinking
+    dThinking "Even so, admist the whispers of marina and basil and hearty carbonara pasta, there lies a subtle intrigue."
+    dThinking "An intrigue in the subtle complexities of Greek cuisine, its delicate balance of flavours a puzzle waiting to be unraveled."
+    dThinking "While many may revel in bold spices and zesty salas, it has yet to capture my palate in the same way."
+    mc "You speak Japanese right? Excuse me for prying but what about Japanese food?"
+    show sweat zorder 1000 with Dissolve(1.0)
+    dThinking "Ah, Japanese cuisine, once it captivated my senses, though its allure now wanes in comparison to the passions stirred by the aforementioned."
+    hide dThinking
+    hide sweat
+    show d
+    d "Thus concludes my exploration of culinary preferences!"
+    mc "Thank you very much! Let me just write that down."
+    menu:
+        "Write down 'Greek Cuisine' as her preference":
+            $ cuisine_preferences.append("Greek Cuisine")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue1
+        "Write down 'Italian Cuisine' as her preference":
+            $ cuisine_preferences.append("Italian Cuisine")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue1
+        "Write down 'Japanese Cuisine' as her preference":
+            $ cuisine_preferences.append("Japanese Cuisine")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue1
+        "Write down 'Mexican Cuisine' as her preference":
+            $ cuisine_preferences.append("Mexican Cuisine")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue1
+        
+    label dialogue1:
+        mc "Thank you again."
+        mc "So, what flavours do you like?"
 
-    play music dariamainbgm volume 0.5 fadein 0.5
-    $ quick_menu = True
+
     d "I hope this is sufficient for the chef to work with."
-
     mc "Wh- Uhh-, yeah! That's perfect!... I think."
-    mc "{i}(What kind of dishes can Chef Rizz make with these ingredients?!){/i}"
-    mc "{i}(Regardless, I should write this down.){/i}"
-    mc "{i}(I'll just jot down her likes and dislikes in my notebook.){/i}"
-    play sound paperflip
-    # placeholder replace with notebook drawing in future   
-    show screen nt_button
-    mc "{i}(I'll need to remember this for when I tell Chef Rizz.){/i}"
-    mc "I'll go tell the chef right away!"
-    $ quick_menu = False
 
     call act2

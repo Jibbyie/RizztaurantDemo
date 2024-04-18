@@ -64,6 +64,7 @@ image daria angry:
     repeat
 
 image daria glasses shine:
+    "Daria.png" with Dissolve(0.2)
     "GlassesShine.png" with Dissolve(0.6)
     pause 1.0
     "Daria.png" with Dissolve(0.2)
@@ -77,7 +78,6 @@ image chef wink:
     pause 0.4
     "ChefRizz.png"
 
-
 # Defaults
 default playerName = ""
 default likes = ""
@@ -85,41 +85,20 @@ default dislikes = ""
 default current_input = "likes"
 default show_quick_menu = True
 
+# Preferences Defaults
+default cuisine_preferences = []
+default flavour_preferences = []
+default dietary_preferences = []
+default consistency_preferences = []
+default points = 0
+
 # MC and effects definitions
 define mc = Character("[playerName]", what_slow_cps=30)
-define mcthinking = Character("[playerName]", what_slow_cps=30, what_prefix="{i}", what_suffix="{/i}")
+define mcthinking = Character("[playerName]", what_slow_cps=30, what_prefix="{i}(", what_suffix="){/i}")
 define flashbulb = Fade(0.2, 0.0, 0.4, color='#fff') 
 define audio.background = "rizztaurantambience.mp3"
 
-# Notebook Screen
-screen notepad_screen():
-    frame:
-        xsize 1400
-        ysize 275
-        has vbox
-        vbox:
-            spacing 10
-            textbutton "Likes" action SetVariable("current_input", "likes")
-            textbutton "Dislikes" action SetVariable("current_input", "dislikes")
-
-            if current_input == "likes":
-                input:
-                    default likes
-                    value VariableInputValue('likes')
-                    length 75 # Adjust the length as needed
-            else:
-                input:
-                    default dislikes
-                    value VariableInputValue('dislikes')
-                    length 75  # Adjust the length as needed
-
-            textbutton "Close Notepad" action Return()
-
-
-screen nt_button:
-    textbutton "Notepad" action ShowMenu('notepad_screen')
-
-# Transforms
+# Transforms/transform animations
 transform half_size:
     zoom 0.5
 transform speaking:
