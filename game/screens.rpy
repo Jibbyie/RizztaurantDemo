@@ -1511,24 +1511,40 @@ style pref_vbox:
 
 ## Since a mouse may not be present, we replace the quick menu with a version
 ## that uses fewer and bigger buttons that are easier to touch.
-screen quick_menu():
-    variant "touch"
+default persistent.qm_helpseen = False
 
+screen quick_menu():
+    default hidden = True
     zorder 100
 
     if quick_menu:
+        if hidden == True:
+            mousearea style "qm_show" hovered SetScreenVariable("hidden", False)
+            if persistent.qm_helpseen == False:
+                textbutton "< Move cursor here for Quick Menu >" style 'qm_show':
+                    hovered SetVariable('persistent.qm_helpseen', True) action NullAction()
+        if hidden == False:
+            mousearea style "qm_hide" unhovered SetScreenVariable("hidden", True)
 
-        hbox:
-            style_prefix "quick"
+            frame modal True background None xcenter 0.5 yalign 1.0:
+                hbox:
+                    style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+                    textbutton _("Back")    action Rollback()
+                    textbutton _("Skip")    action Skip() alternate Skip(fast=True, confirm=True)
+                    textbutton _("Auto")    action Preference("auto-forward", "toggle")
+                    textbutton _("History") action ShowMenu('history')
+                    textbutton _("Q.Save")  action QuickSave() alternate ShowMenu('save')
+                    textbutton _("Q.Load")  action QuickLoad() alternate ShowMenu('load')
+                    textbutton _("Prefs")   action ShowMenu('preferences')
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
+style qm_show:
+    xsize 0.33 xcenter 0.5
+    ysize 0.03 yanchor 1.0 ypos 1.0
 
+style qm_hide:
+    xsize 0.67 xcenter 0.5
+    ysize 0.07 yanchor 1.0 ypos 1.0
 
 style window:
     variant "small"

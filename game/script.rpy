@@ -318,25 +318,25 @@ init python:
 # Chef Rizz
 define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
 define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
-define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", callback=chefRizz_callback)
-define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png", callback=chefRizz_callback)
-define crEyebrowRaise = Character("Chef Rizz", image="ChefRizzEyeClosed.png", callback=chefRizz_callback)
-define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", callback=chefRizz_callback)
+define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png",  what_slow_cps=30, callback=chefRizz_callback)
+define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png",  what_slow_cps=30, callback=chefRizz_callback)
+define crEyebrowRaise = Character("Chef Rizz", image="ChefRizzEyeClosed.png",  what_slow_cps=30, callback=chefRizz_callback)
+define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png",  what_slow_cps=30, callback=chefRizz_callback)
 
 # Daria
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
-define dHappy = Character("HiraganaLover95", image="DariaHappy.png", callback=daria_callback)
-define dHorny = Character("HiraganaLover95", image="DariaHorny.png", callback=daria_callback)
-define dAngry = Character("HiraganaLover95", image="DariaAngryLarge.png", callback=daria_callback)
-define dThinking = Character("HiraganaLover95", image="DariaThinking.png", callback=daria_callback)
-define dFlushed = Character("HiraganaLover95", image="DariaFlushed.png", callback=daria_callback)
-define dDetective = Character("HiraganaLover95", image="DetectiveDaria.png", callback=daria_callback)
-define dDetectiveGlare = Character("HiraganaLover95", image="DetectiveDariaGlare.png", callback=daria_callback)
-define dAngryLarge = Character("HiraganaLover95", image="DariaAngryLarge.png", callback=daria_callback)
-define dAngrySmall = Character("HiraganaLover95", image="DariaAngrySmall.png", callback=daria_callback)
-define dSweat = Character("HiraganaLover95", image="DariaSweat.png", callback=daria_callback)
-define dGlare = Character("HiraganaLover95", image="DariaGlare.png", callback=daria_callback)
-define dGlassesShine = Character("HiraganaLover95", image="DariaGlassesShine.png", callback=daria_callback)
+define dHappy = Character("HiraganaLover95", image="DariaHappy.png", what_slow_cps=50, callback=daria_callback)
+define dHorny = Character("HiraganaLover95", image="DariaHorny.png", what_slow_cps=50, callback=daria_callback)
+define dAngry = Character("HiraganaLover95", image="DariaAngryLarge.png", what_slow_cps=50, callback=daria_callback)
+define dThinking = Character("HiraganaLover95", image="DariaThinking.png", what_slow_cps=40, callback=daria_callback)
+define dFlushed = Character("HiraganaLover95", image="DariaFlushed.png", what_slow_cps=50, callback=daria_callback)
+define dDetective = Character("HiraganaLover95", image="DetectiveDaria.png", what_slow_cps=50, callback=daria_callback)
+define dDetectiveGlare = Character("HiraganaLover95", image="DetectiveDariaGlare.png", what_slow_cps=50, callback=daria_callback)
+define dAngryLarge = Character("HiraganaLover95", image="DariaAngryLarge.png", what_slow_cps=50, callback=daria_callback)
+define dAngrySmall = Character("HiraganaLover95", image="DariaAngrySmall.png", what_slow_cps=50, callback=daria_callback)
+define dSweat = Character("HiraganaLover95", image="DariaSweat.png", what_slow_cps=50, callback=daria_callback)
+define dGlare = Character("HiraganaLover95", image="DariaGlare.png", what_slow_cps=50, callback=daria_callback)
+define dGlassesShine = Character("HiraganaLover95", image="DariaGlassesShine.png", what_slow_cps=50, callback=daria_callback)
 
 # The game starts here.
 label start:
@@ -344,9 +344,9 @@ label start:
     label chooseName:
         $playerName = renpy.input("What is your name?", length=10)
         $playerName = playerName.strip()
-        if playerName == "":
+        if playerName == "": 
             $playerName="Joe Momma"
-        if playerName=="HiraganaLover95".lower() or playerName=="Chef Rizz".lower():
+        if playerName =="HiraganaLover95".lower() or playerName=="Chef Rizz".lower():
             "Please choose a different name, not one that is already an NPC!"
             jump chooseName
     call act1

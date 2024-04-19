@@ -35,6 +35,7 @@ label act1:
     mc "{i}(A customer?! It can't be, it's been damn near.. I don't know...- 10 years since we've last had one? What should I do, oh god, I can't remember the last time we had one.){/i}"
     mc "{i}Ever since that incident with Chef Rizz and that guy's girlfriend I-{/i}"
     $ quick_menu = False
+    window hide
     
     # Daria(HiraganaLover95) introduction
     show bgkitchen with hpunch
@@ -42,6 +43,7 @@ label act1:
     show d at center with easeinright
     play music dariamainbgm volume 0.5 fadein 1.0 
     $ quick_menu = True
+    window show
     "{cps=50}Konnichiwa. Does this establishment currently harbour any occupants?{/cps}"
 
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
@@ -69,9 +71,11 @@ label act1:
         hide d
         show dThinking
         "{cps=50}P-p-pardon me?{/cps}"
+        window hide
         show sweat
         show flushed
         with Dissolve(2.0)
+        window show
         mc "I'm sorry, you speak Japanese don't you?"
         "{cps=50}I uh, uh-{/cps}"
         "{cps=50}Yes, mochiron, you just, caught me off guard... sumimasen..{/cps}"
@@ -107,7 +111,6 @@ label act1:
 
     mc "Oh, no, not at all! I was just uh...."
     hide d
-    window auto
     
     $ quick_menu = False
     show bgkitchen:
@@ -191,10 +194,9 @@ label act1:
     mc "{i}(I've got it!){/i}"
     mc "{i}(I'll just tell her that we're out of everything on the menu, and that we're only serving one thing today!){/i}"
     mc "{i}(No you idiot that doesn't even make sense, how would we be out of everything without a single other customer?){/i}"
+    $ quick_menu = False
 
     # Intermission, MC introduces main idea (core gameplay loop)
-    window hide
-    $ quick_menu = False
     show text "{color=#80400B}{size=+10}{b}A few minutes later...{/b}{/color}" with Dissolve(1.5)
     $ renpy.pause(3, hard=True)
     $ quick_menu = True
@@ -433,20 +435,27 @@ label act1:
     dThinking "For those tastes that stir neither passion nor aversion, they remain elusive, their significance veiled in ambiguity."
     dThinking "Sourness.. holding a curious neutrality. Neither captivating nor repelling, but existing as a fleeting murmur in this ensemble."
     dThinking "On the other hand, there are many that elicit a distate that cannot be ignored."
+    show d at offscreenleft
     show daria angry zorder 1000
+    hide dThinking
+    show dThinking at shake, center:
+        zoom 1.03
     dThinking "Lest I be met with a saccharine embrace again, I will respond with a vile recoil of the senses."
     dThinking "As if repelled by the very essence of disgust itself, an embrace akin to tasting the forbidden fruit of excess."
+    hide d
+    hide dThinking
     hide daria angry
+    show dThinking
     stop music fadeout 1.0
-    dThinking "And thus, the tangled web unfolds, each flavour a thread in the intricate tapestry of culinary exploration." 
-    dThinking "Each weaving together a mosaic of experiences waiting to be deciphered." 
-    dThinking "A puzzle whose solution lies hidden within the harmony of a grand orchestration of culinary delight."
-    dThinking "......."
-    dThinking "......."
+    dThinking "{cps=18}Thus, the tangled web unfolds, each flavour a thread in the intricate tapestry of gastronomic exploration.{/cps}" 
+    dThinking "{cps=15}Each weaving together a mosaic of experiences waiting to be deciphered.{/cps}" 
+    dThinking "{cps=12}A puzzle whose solution lies hidden within the harmony of a grand orchestration of epicurean delight.{/cps}"
+    dThinking "{cps=9}.......{/cps}"
+    dThinking "{cps=5}.......{/cps}"
     mc "Everything alright?"
-    dThinking "....."
+    dThinking "{cps=2}......{/cps}"
     mc "I take it that that you're done answering?"
-    dThinking "Oh yes of course.. I was just ensnared in deep thought."
+    dThinking "{cps=18}Oh yes of course.. apologies.. I was just ensnared in deep thought.{/cps}"
     play music dariamainbgm volume 0.5 fadein 0.5
     mc "Okay.. thank you! I will just write that down again."
     menu:
@@ -478,7 +487,7 @@ label act1:
     label dialogue2:
         mc "Okay! Ready for question 3?"
         stop music
-        dThinking "....."
+        dThinking "{cps=1}.....{/cps}"
         play music dariamainbgm volume 0.5 
         mc "Okay!"
 
