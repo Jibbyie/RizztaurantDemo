@@ -1530,13 +1530,13 @@ screen quick_menu():
                 hbox:
                     style_prefix "quick"
 
-                    textbutton _("Back")    action Rollback()
                     textbutton _("Skip")    action Skip() alternate Skip(fast=True, confirm=True)
-                    textbutton _("Auto")    action Preference("auto-forward", "toggle")
                     textbutton _("History") action ShowMenu('history')
-                    textbutton _("Q.Save")  action QuickSave() alternate ShowMenu('save')
-                    textbutton _("Q.Load")  action QuickLoad() alternate ShowMenu('load')
-                    textbutton _("Prefs")   action ShowMenu('preferences')
+                    textbutton _("Save") action ShowMenu('save')
+                    textbutton _("Load") action ShowMenu('load')        
+                    textbutton _("Settings")   action ShowMenu('preferences')
+                    textbutton _("Main Menu") action MainMenu()        
+                    
 
 style qm_show:
     xsize 0.33 xcenter 0.5

@@ -344,6 +344,7 @@ label start:
     label chooseName:
         $playerName = renpy.input("What is your name?", length=10)
         $playerName = playerName.strip()
+        $playerName = playerName.lower()
         if playerName == "": 
             $playerName="Joe Momma"
         if playerName =="HiraganaLover95".lower() or playerName=="Chef Rizz".lower():

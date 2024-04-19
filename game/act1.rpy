@@ -48,6 +48,9 @@ label act1:
 
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
     mc "{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}"
+
+
+    
     window hide
     
 
