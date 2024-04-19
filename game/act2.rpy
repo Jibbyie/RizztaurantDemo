@@ -1,6 +1,6 @@
 label act2:
    # Act 2, Chef Rizz intro and kitchen scene
-   $ quick_menu = False
+   
    stop music fadeout 1.0
 
    play sound walking noloop
@@ -12,16 +12,16 @@ label act2:
       xalign 2.0
 
    #Chef's intro
-   $ quick_menu = True
+   
    mc "Chef! We've got a customer!"
    mc "Chef??"
    mc "{i}Where are those damned lights..{/i}"
-   $ quick_menu = False
+   
    play sound chefdoor volume 0.2 noloop
    $ renpy.pause(7.2, hard=True)
-   $ quick_menu = True
+   
    "{cps=20}{i}{font=Tangerine_Bold.ttf}{size=60}A customer you say?...{/font}{/size}{/i}{/cps}"
-   $ quick_menu = False
+   
 
    play music cheffintromusic if_changed volume 1.0 fadein 0.5
    show crDark at center
@@ -29,7 +29,7 @@ label act2:
    scene bgkitchens 
    show crNoCallback at center
    with flashbulb
-   $ quick_menu = True
+   
    cr2 "How can I be of service?"
    hide crNoCallback
    
@@ -59,20 +59,20 @@ label act2:
    hide cr2
    show cr
    cr2 "My oh my.. I better go introduce myself.."
-   $ quick_menu = False
+   
    play sound running volume 0.5
-   $ quick_menu = False
+   
    show cr at running, leftoffscreen
    with MoveTransition(2.0)
    
-   $ quick_menu = True
+   
    mc "Hold your horses there Chef!"
-   $ quick_menu = False
+   
    play sound rewind volume 0.5
    show cr at laugh, center
    with MoveTransition(1.0)
    show cr at center
-   $ quick_menu = True
+   
    mc "Remember what happened last time?"
    cr "What could you possibly be referring to?"
    mc "You stole a good customers' girlfriend from him on the spot."
@@ -102,9 +102,9 @@ label act2:
    mc "{i}(What did they even make him do?){/i}"
    mc "{i}(I've never met someone so charismatic that they just throw money at him like nothing.)"
    "{i}{font=Tangerine_Bold.ttf}{cps=20}{size=60}You okay there kitten whiskers? You seem a little lost in thought..{/size}{/font}{/cps}{/i}"
-   $ quick_menu = False
+   
    show bgkitchens with hpunch
-   $ quick_menu = True
+   
    mc "Jesus Chef when did you get so close!"
    hide cr
    show cr:
@@ -120,12 +120,12 @@ label act2:
    show cr
    mc "You wanted to be the greatest chef in the world?"
    mc "This is your chance to prove it!-"
-   $ quick_menu = False
+   
    play sound phoneringing volume 0.2
    show bgkitchens with vpunch
    $ renpy.pause(3.0, hard=True)
    
-   $ quick_menu = True
+   
    cr "Pardon me sugar, I think that's my phone, would you be a doll and pick it up and put it on speaker for me?"
    play sound iphoneunlock volume 0.5
    mc "*Sigh*, make it quick Chef."
@@ -133,25 +133,25 @@ label act2:
    show cr2
 
    cr2 "Hey babygirl, is this who I think it is?"
-   $ quick_menu = False
+   
    play sound call1 
    $ renpy.pause(1.0, hard=True)
-   $ quick_menu = True
+   
    cr2 "I'd never forget you baby, you know you're important to me."
    play sound call2
-   $ quick_menu = False
+   
    $ renpy.pause(1.0, hard=True)
-   $ quick_menu = True
+   
    cr2 "Alright, alright, dinner this Friday at 9, wear that nice dress and the lacey underwear that I love."
    play sound call3
-   $ quick_menu = False
+   
    $ renpy.pause(2.0, hard=True)
-   $ quick_menu = True
+   
    cr2 "You know Daddy's got you kitten. Anything you want and it's yours."
    play sound call4
-   $ quick_menu = False
+   
    $ renpy.pause(3.0, hard=True)
-   $ quick_menu = True
+   
    cr2 "Till we meet again Princess. Mwah~♡"
    hide cr2
    show cr
