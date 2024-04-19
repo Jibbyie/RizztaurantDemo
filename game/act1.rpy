@@ -358,12 +358,20 @@ label act1:
 
     mc "Alright, let's get started then!"
     mc "So, what are some of your favourite cuisines?"
+    stop music fadeout 2.0
+    play music rizztaurantambience volume 0.5 fadein 3.0
+    hide d with Dissolve(1.0)
 
     "HiraganaLover95 will now talk about her preferences. As you might have noticed, she's a bit chatty."
-    "Do your best to memorise her answers and take note of what she loves, likes, dislikes or neutral about."
+    "Do your best to memorise her answers and take note of what she loves, likes, dislikes or is neutral about."
     "This will be important later for when you relay it to the chef."
     "Don't worry, there'll be a point where you can write down what you think is best."
+    "One more thing!"
     "Just a little hint, you can't write down everything!"
+
+    stop music fadeout 2.5
+    play music dariamainbgm volume 0.5 fadein 3.0
+    show d with Dissolve(0.5)
 
     d "Cuisines, oh what a labryinth of sensory experiences they offer!"
     d "If you wish to probe the depths of my culinary inclinations, you may. For I grant you passage."
@@ -381,7 +389,7 @@ label act1:
     hide dThinking
     hide sweat
     show d
-    d "Thus concludes my exploration of culinary preferences!"
+    d "Thus concludes my exploration of cuisine preferences!"
     mc "Thank you very much! Let me just write that down."
     menu:
         "Write down 'Greek Cuisine' as her preference":
@@ -407,7 +415,82 @@ label act1:
         
     label dialogue1:
         mc "Thank you again."
-        mc "So, what flavours do you like?"
+        mc "Ready for the next question?"
+    
+    hide d
+    show dGlare
+    dGlare "Ready as I'll ever be good sir!"
+    mc "Perfect!"
+    mc "So, what would be your ideal flavour combination?"
+    hide dGlare
+    show dThinking
+    dThinking "Ah.. deep within the recesses of my culinary consciousness, there exists within me a certain fascination for sensations that linger, inviting contemplation long after the last bite."
+    dThinking "The kind of flavour that beckons with a depth that leaves an indelible impression upon the senses, an intriguing bitterness that hints at complexity yet undiscovered."
+    dThinking "Unfolding like the pages of a well-worn novel waiting to be explored."
+    dThinking "I too yearn for a subtle brininess, a touch of sea-swept allure that transports me to distant shores, summoning up memories of salt-kissed breezes and sun-drenched afternoons."
+    dThinking "Yet... admist the vast array of flavours that grace my soul, there are many that fail to spark interest. Fail to conjure the joyous symphony of sensations that I seek."
+    dThinking "A blandness that lingers like a shadow, leaving me indifferent to their presence comparable to a mere whisper."
+    dThinking "For those tastes that stir neither passion nor aversion, they remain elusive, their significance veiled in ambiguity."
+    dThinking "Sourness.. holding a curious neutrality. Neither captivating nor repelling, but existing as a fleeting murmur in this ensemble."
+    dThinking "On the other hand, there are many that elicit a distate that cannot be ignored."
+    show daria angry zorder 1000
+    dThinking "Lest I be met with a saccharine embrace again, I will respond with a vile recoil of the senses."
+    dThinking "As if repelled by the very essence of disgust itself, an embrace akin to tasting the forbidden fruit of excess."
+    hide daria angry
+    stop music fadeout 1.0
+    dThinking "And thus, the tangled web unfolds, each flavour a thread in the intricate tapestry of culinary exploration." 
+    dThinking "Each weaving together a mosaic of experiences waiting to be deciphered." 
+    dThinking "A puzzle whose solution lies hidden within the harmony of a grand orchestration of culinary delight."
+    dThinking "......."
+    dThinking "......."
+    mc "Everything alright?"
+    dThinking "....."
+    mc "I take it that that you're done answering?"
+    dThinking "Oh yes of course.. I was just ensnared in deep thought."
+    play music dariamainbgm volume 0.5 fadein 0.5
+    mc "Okay.. thank you! I will just write that down again."
+    menu:
+        "Write down 'Sweet & Savoury' as her preference.":
+            $ flavour_preferences.append("Sweet")
+            $ flavour_preferences.append("Savoury")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue2
+        "Write down 'Bitter & Salty' as her preference.":
+            $ flavour_preferences.append("Bitter")
+            $ flavour_preferences.append("Salty")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue2
+        "Write down 'Sour & Salty' as her preference.":
+            $ flavour_preferences.append("Sour")
+            $ flavour_preferences.append("Salty")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue2
+        "Write down 'Sour & Sweet' as her preference.":
+            $ flavour_preferences.append("Sour")
+            $ flavour_preferences.append("Sweet")
+            play sound writing volume 0.5
+            $ renpy.fix_rollback()
+            jump dialogue2
+
+    label dialogue2:
+        mc "Okay! Ready for question 3?"
+        stop music
+        dThinking "....."
+        play music dariamainbgm volume 0.5 
+        mc "Okay!"
+
+    mc "Do you have any specific dietary requirements?"
+
+
+
+    
+
+
+    
+
 
 
     d "I hope this is sufficient for the chef to work with."
