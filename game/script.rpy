@@ -34,6 +34,10 @@ image dSweat = "DariaSweat.png"
 image dGlare = "DariaGlare.png"
 image dGlassesShine = "DariaGlassesShine.png"
 image dThinking = "DariaThinking.png"
+image dThinkingDark = "DariaThinkingDark.png"
+image dThinkingGlassesShining = "DariaThinkingGlassesShine.png"
+image dThinkingGlassesShineDark = "DariaThinkingGlassesShineDark.png"
+
 
 # Daria's emotions
 image flushed = "Flushed.png"
@@ -44,6 +48,7 @@ image angrylarge = "AngryLarge.png"
 image angrysmall = "AngrySmall.png"
 image glasshesShine = "GlassesShine.png"
 image dfb = "DetectiveFedoraBadge.png"
+image dThinkingGlassesShine = "ThinkingGlassesShine.png"
 
 # Misc
 image rizztaurantmenu = "menu.png"
@@ -52,6 +57,7 @@ image black = "#000000ff"
 
 # Backgrounds
 image bgroom = "bgkitchen.jpg"
+image bgroomdark = "bgkitchendark.png"
 image bgkitchen1dark = "bgkitchen1dark.png"
 image doombackground = "doombackground.png"
 
@@ -263,6 +269,30 @@ init python:
             elif event == 'end': 
                 renpy.show("dGlassesShine", zorder=0, at_list=[not_speaking])
 
+        elif renpy.showing("dThinkingDark"):
+        
+            if event == 'begin': 
+                renpy.show("dThinkingDark", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dThinkingDark", zorder=0, at_list=[not_speaking])
+
+        elif renpy.showing("dThinkingGlassesShine"):
+        
+            if event == 'begin': 
+                renpy.show("dThinkingGlassesShine", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dThinkingGlassesShine", zorder=0, at_list=[not_speaking])
+        
+        elif renpy.showing("dThinkingGlassesShineDark"):
+        
+            if event == 'begin': 
+                renpy.show("dThinkingGlassesShineDark", zorder=10, at_list=[speaking])
+                
+            elif event == 'end': 
+                renpy.show("dThinkingGlassesShineDark", zorder=0, at_list=[not_speaking])
+
     def chefRizz_callback(event, interact=True, **kwargs):
         if not interact: 
             return
@@ -337,6 +367,9 @@ define dAngrySmall = Character("HiraganaLover95", image="DariaAngrySmall.png", w
 define dSweat = Character("HiraganaLover95", image="DariaSweat.png", what_slow_cps=50, callback=daria_callback)
 define dGlare = Character("HiraganaLover95", image="DariaGlare.png", what_slow_cps=50, callback=daria_callback)
 define dGlassesShine = Character("HiraganaLover95", image="DariaGlassesShine.png", what_slow_cps=50, callback=daria_callback)
+define dThinkingDark = Character("HiraganaLover95", image="DariaThinkingDark.png", what_slow_cps=50, callback=daria_callback)
+define dThinkingGlassesShine = Character("HiraganaLover95", image="DariaThinkingGlassesShine.png", what_slow_cps=50, callback=daria_callback)
+define dThinkingGlassesShineDark = Character("HiraganaLover95", image="DariaThinkingGlassesShineDark.png", what_slow_cps=50, callback=daria_callback)
 
 # The game starts here.
 label start:

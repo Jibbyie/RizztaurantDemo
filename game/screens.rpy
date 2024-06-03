@@ -1530,6 +1530,7 @@ screen quick_menu():
                 hbox:
                     style_prefix "quick"
 
+                    textbutton _("Back") action Rollback()
                     textbutton _("Skip")    action Skip() alternate Skip(fast=True, confirm=True)
                     textbutton _("History") action ShowMenu('history')
                     textbutton _("Save") action ShowMenu('save')

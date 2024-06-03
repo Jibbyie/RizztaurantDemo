@@ -388,7 +388,7 @@ label act1:
     show dThinking
     dThinking "Even so, admist the whispers of marina and basil and hearty carbonara pasta, there lies a subtle intrigue."
     dThinking "An intrigue in the subtle complexities of Greek cuisine, its delicate balance of flavours a puzzle waiting to be unraveled."
-    dThinking "While many may revel in bold spices and zesty salas, it has yet to capture my palate in the same way."
+    dThinking "While many may revel in bold spices and zesty salsas, it has yet to capture my palate in the same way."
     mc "You speak Japanese right? Excuse me for prying but what about Japanese food?"
     show sweat zorder 1000 with Dissolve(1.0)
     dThinking "Ah, Japanese cuisine, once it captivated my senses, though its allure now wanes in comparison to the passions stirred by the aforementioned."
@@ -449,18 +449,35 @@ label act1:
     hide d
     hide dThinking
     hide daria angry
-    show dThinking
     stop music fadeout 1.0
-    dThinking "{cps=18}Thus, the tangled web unfolds, each flavour a thread in the intricate tapestry of gastronomic exploration.{/cps}" 
+    hide bgroom
+
+    show bgroomdark
+    show dThinkingDark 
+    with Dissolve(3.0)
+    dThinking "{cps=20}And thus.{/cps}"
+    mcthinking "Wait... who turned off the lights?"
+    dThinking "{cps=18}The tangled web unfolds, each flavour a thread in the intricate tapestry of gastronomic exploration.{/cps}" 
     dThinking "{cps=15}Each weaving together a mosaic of experiences waiting to be deciphered.{/cps}" 
     dThinking "{cps=12}A puzzle whose solution lies hidden within the harmony of a grand orchestration of epicurean delight.{/cps}"
     dThinking "{cps=9}.......{/cps}"
+    hide dThinkingDark
+    show dThinking at offscreenleft
+    show dThinkingGlassesShineDark at center:
+        zoom 1.03
     dThinking "{cps=5}.......{/cps}"
-    mc "Everything alright?"
+    mc "Everything... alright?"
     dThinking "{cps=2}......{/cps}"
     mc "I take it that that you're done answering?"
-    dThinking "{cps=18}Oh yes of course.. apologies.. I was just ensnared in deep thought.{/cps}"
+    hide dThinking
+    hide dThinkingGlassesShineDark
+    show dThinkingGlassesShineDark
+    dThinking "{cps=18}Oh yes.. of course.. apologies.. I was just ensnared in deep thought.{/cps}"
     play music dariamainbgm volume 0.5 fadein 0.5
+    hide dThinkingGlassesShineDark
+    show dThinkingGlassesShining
+    hide bgroomdark
+    show bgkitchen
     mc "Okay.. thank you! I will just write that down again."
     menu:
         "Write down 'Sweet & Savoury' as her preference.":
@@ -490,12 +507,23 @@ label act1:
 
     label dialogue2:
         mc "Okay! Ready for question 3?"
+        hide bgroom
+        show bgroomdark
+        hide dThinkingGlassesShining
+        show dThinkingGlassesShineDark
         stop music
         dThinking "{cps=1}.....{/cps}"
         play music dariamainbgm volume 0.5 
+        hide bgroomdark 
+        hide dThinkingGlassesShineDark
+        show dThinkingGlassesShining
+        show bgkitchen
         mc "Okay!"
 
+
     mc "Do you have any specific dietary requirements?"
+    hide dThinkingGlassesShineDark
+    show dThinking at center
 
 
 
