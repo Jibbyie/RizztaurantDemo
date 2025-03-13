@@ -4,7 +4,7 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
-
+## Mouse Pointer # define config.mouse = { 'default' : [ ('gui/mousepointer.png', 0, 0)]}
 ## Basics ######################################################################
 
 ## A human-readable name of the game. This is used to set the default window

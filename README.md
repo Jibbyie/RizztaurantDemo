@@ -1,8 +1,18 @@
 # Rizztaurant Demo
-Fun Visual Novel project being developed by my girlfriend and I. Completely for fun and as a learning experience for Ren'py. Aiming for replayability with a goal of 5 or more endings, 2 to begin with. Will be around 10-15 minutes playtime!
+Fun Visual Novel project being developed by my friend and I. Completely for fun and as a learning experience for Ren'py. Aiming for replayability with a goal of 5 or more endings, 2 to begin with. Will be around 10-15 minutes playtime!
 
 ![sketch](https://github.com/Jibbyie/RizztaurantDemo/assets/55252035/c48ae8bc-921c-4397-b0a1-a1f526af8443)
 (Our first ever sketch!)
+
+![Character 1](assets/images/hiragana.png)
+![Character 2](assets/images/chefrizz.png)
+![Dialogue Options](assets/images/options.png)
+![Scenery](assets/images/talking.png)
+
+![UI Mockup](assets/images/ui_mockup.png)
+
+![Background Concept](assets/images/background_concept.jpg)
+
 
 ## How It's Made:
 

@@ -49,7 +49,6 @@ label act1:
     mc "{i}(Oh my god, it's a real person! I'm not crazy!){/i}"
     mc "{i}(Stick to the script, stick to the script.. y-you know what to do man!){/i}"
 
-
     
     window hide
     
@@ -212,12 +211,7 @@ label act1:
     mc "{i}(I'll ask her if she's up for a culinary adventure. You know, something different from the usual fare.){/i}"
     mc "{i}(A chance to savour the unexpected. After all, who wants predictable when you can have... surprise?){/i}"
     mc "{i}(Yeah, that sounds good!){/i}"
-
-    mc "{i}(Alright, I've got this. I'll tell her: 'Excuse me, we have a rather special offering today.'){/i}"
-    mc "{i}(I'll tell her about the opportunity to have a meal tailored precisely to her tastes. You know, a chance to create her own culinary masterpiece.){/i}"
-    mc "{i}(I'll exclaim 'Miss, it's only available for a limited time, you should act now before it's too late!'){/i}"
-    mc "{i}(And then, the pièce de résistance, our Michelin-starred chef will personally craft her culinary desires into reality. It's a symphony of flavours, a melody of imagination!){/i}"
-    mc "{i}(Yep, I'm screwed.){/i}"
+    mc "{i}(I'm so screwed....){/i}"
     
     hide dThinking
 
