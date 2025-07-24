@@ -160,198 +160,61 @@ transform leftoffscreen:
 
 # Text callbacks for speaking
 init python:
-    def daria_callback(event, interact=True, **kwargs):
-        if not interact: 
-            return
-            ## If the character is currently shown on screen, this will search for the character 'tag'
-        if renpy.showing("d"):
-        
-            if event == 'begin': 
-                renpy.show("d", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("d", zorder=0, at_list=[not_speaking])
-        
-        elif renpy.showing("dHappy"):
-        
-            if event == 'begin': 
-                renpy.show("dHappy", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dHappy", zorder=0, at_list=[not_speaking])
+    def create_speaker_callback(image_tags):
+        """
+        This function creates and returns a callback function tailored for a
+        specific character's list of image tags.
+        """
+        def speaker_callback(event, interact=True, **kwargs):
+            if not interact:
+                return
 
-        elif renpy.showing("dHorny"):
-        
-            if event == 'begin': 
-                renpy.show("dHorny", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dHorny", zorder=0, at_list=[not_speaking])
-        
-        
-        elif renpy.showing("dAngry"):
-        
-            if event == 'begin': 
-                renpy.show("dAngry", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dAngry", zorder=0, at_list=[not_speaking])
+            # Determine the correct transform and zorder based on the event
+            if event == 'begin':
+                z_order = 10
+                at_list = [speaking]
+            elif event == 'end':
+                z_order = 0
+                at_list = [not_speaking]
+            else:
+                return # Ignore other events
 
-        elif renpy.showing("dFlushed"):
+            # Loop through the character's possible image tags to find which one is showing
+            for tag in image_tags:
+                if renpy.showing(tag):
+                    # Apply the transform to the showing image and then stop
+                    renpy.show(tag, zorder=z_order, at_list=at_list)
+                    break
         
-            if event == 'begin': 
-                renpy.show("dFlushed", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dFlushed", zorder=0, at_list=[not_speaking])
+        return speaker_callback
 
-        elif renpy.showing("dDetective"):
-        
-            if event == 'begin': 
-                renpy.show("dDetective", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dDetective", zorder=0, at_list=[not_speaking])
+    # --- Create Daria's Callback ---
+    # List all of Daria's image tags here
+    daria_tags = [
+        "d", "dHappy", "dHorny", "dAngry", "dFlushed", "dDetective", 
+        "dDetectiveGlare", "dAngryLarge", "dAngrySmall", "dThinking", 
+        "dSweat", "dGlare", "dGlassesShine", "dThinkingDark", 
+        "dThinkingGlassesShine", "dThinkingGlassesShineDark"
+    ]
+    daria_callback = create_speaker_callback(daria_tags)
 
-        elif renpy.showing("dDetectiveGlare"):
-        
-            if event == 'begin': 
-                renpy.show("dDetectiveGlare", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dDetectiveGlare", zorder=0, at_list=[not_speaking])
+    # --- Create Chef Rizz's Callback ---
+    # List all of Chef Rizz's image tags here
+    chefRizz_tags = [
+        "cr", "cr2", "crAwkward", "crCooking", 
+        "crEyeClosed", "crEyebrowRaise"
+    ]
+    chefRizz_callback = create_speaker_callback(chefRizz_tags)
 
-        elif renpy.showing("dAngryLarge"):
-        
-            if event == 'begin': 
-                renpy.show("dAngryLarge", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dAngryLarge", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dAngrySmall"):
-        
-            if event == 'begin': 
-                renpy.show("dAngrySmall", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dAngrySmall", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dThinking"):
-        
-            if event == 'begin': 
-                renpy.show("dThinking", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dThinking", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dSweat"):
-        
-            if event == 'begin': 
-                renpy.show("dSweat", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dSweat", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dGlare"):
-        
-            if event == 'begin': 
-                renpy.show("dGlare", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dGlare", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dGlassesShine"):
-        
-            if event == 'begin': 
-                renpy.show("dGlassesShine", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dGlassesShine", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dThinkingDark"):
-        
-            if event == 'begin': 
-                renpy.show("dThinkingDark", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dThinkingDark", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("dThinkingGlassesShine"):
-        
-            if event == 'begin': 
-                renpy.show("dThinkingGlassesShine", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dThinkingGlassesShine", zorder=0, at_list=[not_speaking])
-        
-        elif renpy.showing("dThinkingGlassesShineDark"):
-        
-            if event == 'begin': 
-                renpy.show("dThinkingGlassesShineDark", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("dThinkingGlassesShineDark", zorder=0, at_list=[not_speaking])
-
-    def chefRizz_callback(event, interact=True, **kwargs):
-        if not interact: 
-            return
-            ## If the character is currently shown on screen, this will search for the character 'tag'
-        if renpy.showing("cr"):
-        
-            if event == 'begin': 
-                renpy.show("cr", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("cr", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("cr2"):
-        
-            if event == 'begin': 
-                renpy.show("cr2", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("cr2", zorder=0, at_list=[not_speaking])
-        
-        elif renpy.showing("crAwkward"):
-        
-            if event == 'begin': 
-                renpy.show("crAwkward", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("crAwkward", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("crCooking"):
-        
-            if event == 'begin': 
-                renpy.show("crCooking", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("crCooking", zorder=0, at_list=[not_speaking])
-        
-        elif renpy.showing("crEyeClosed"):
-        
-            if event == 'begin': 
-                renpy.show("crEyeClosed", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("crEyeClosed", zorder=0, at_list=[not_speaking])
-
-        elif renpy.showing("crEyebrowRaise"):
-        
-            if event == 'begin': 
-                renpy.show("crEyebrowRaise", zorder=10, at_list=[speaking])
-                
-            elif event == 'end': 
-                renpy.show("crEyebrowRaise", zorder=0, at_list=[not_speaking])
+# --- Character Definitions ---
 
 # Chef Rizz
 define cr = Character("Chef Rizz", image="ChefRizz.png", what_slow_cps=30, callback=chefRizz_callback)
-define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps = 20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
-define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png",  what_slow_cps=30, callback=chefRizz_callback)
-define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png",  what_slow_cps=30, callback=chefRizz_callback)
-define crEyebrowRaise = Character("Chef Rizz", image="ChefRizzEyeClosed.png",  what_slow_cps=30, callback=chefRizz_callback)
-define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png",  what_slow_cps=30, callback=chefRizz_callback)
+define cr2 = Character("Chef Rizz", image="ChefRizz.png", what_font="Tangerine_Bold.ttf", what_size=60, what_slow_cps=20, callback=chefRizz_callback, what_prefix="{i}", what_suffix="{/i}")
+define crAwkward = Character("Chef Rizz", image="ChefRizzAwkward.png", what_slow_cps=30, callback=chefRizz_callback)
+define crEyeClosed = Character("Chef Rizz", image="ChefRizzEyeClosed.png", what_slow_cps=30, callback=chefRizz_callback)
+define crEyebrowRaise = Character("Chef Rizz", image="ChefRizzEyebrowRaise.png", what_slow_cps=30, callback=chefRizz_callback)
+define crCooking = Character("Chef Rizz", image="ChefRizzCooking.png", what_slow_cps=30, callback=chefRizz_callback)
 
 # Daria
 define d = Character("HiraganaLover95", image="Daria.png", what_slow_cps=50, callback=daria_callback)
